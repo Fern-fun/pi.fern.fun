@@ -16,9 +16,13 @@
   $url_weather = "http://api.openweathermap.org/data/2.5/weather?&appid=appid=metric&q=".$city.",".$country_name;
 ```
 
+---
+CSS by [Shaking-Donut][link7]
+
 [link1]: https://www.python.org
 [link2]: https://pypi.org/project/psutil/
 [link3]: https://gpiozero.readthedocs.io/en/stable/
 [link4]: https://pypi.org/project/yfinance/ 
 [link5]: https://openweathermap.org/current
 [link6]: https://www.php.net
+[link7]: https://github.com/Shaking-Donut
