@@ -1,7 +1,7 @@
 # Fern.fun-Server
 
 <p align="center">
-  <img alt="Logo" height="400px" src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" />
+  <img alt="Logo" height="300px" src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" />
 </p>
 
 ## Required
