@@ -1,7 +1,7 @@
 # Fern.fun-Server
 
 <p align="center">
-  <img alt="Logo" width="200px" height="200px" src="http://fern.myftp.org/img/raspi.webp" />
+  <img alt="Logo" width="200px" height="200px" src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" />
 </p>
 
 ## Required
@@ -11,8 +11,14 @@
 * [gpiozero][link3]
 * [yfinance][link4]
 
+[Weather][link5]
+```php
+  $url_weather = "http://api.openweathermap.org/data/2.5/weather?&appid=appid=metric&q=".$city.",".$country_name;
+```
+
 [link1]: https://www.python.org
 [link2]: https://pypi.org/project/psutil/
 [link3]: https://gpiozero.readthedocs.io/en/stable/
 [link4]: https://pypi.org/project/yfinance/ 
+[link5]: https://openweathermap.org/current
 [link6]: https://www.php.net

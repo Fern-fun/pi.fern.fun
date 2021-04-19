@@ -14,7 +14,7 @@ function weather_status(){
         $city = $api_loc->city;
     
         if(!isset($_COOKIE['weather'])){
-            $url_weather = "http://api.openweathermap.org/data/2.5/weather?&appid=72f9ca1b81c35c927314fdb178cf7fbc&units=metric&q=".$city.",".$country_name;
+            $url_weather = "http://api.openweathermap.org/data/2.5/weather?&appid==metric&q=".$city.",".$country_name;
             $api_weather = json_decode(file_get_contents($url_weather));
     
             $value = $api_weather->main->temp." ".$api_weather->weather[0]->main." ".$api_weather->wind->speed;
