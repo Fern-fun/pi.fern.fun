@@ -17,7 +17,7 @@
 ```
 
 ---
-CSS by [Shaking-Donut][link7]
+CSS & JS by [Shaking-Donut][link7]
 
 [link1]: https://www.python.org
 [link2]: https://pypi.org/project/psutil/
