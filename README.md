@@ -1,4 +1,4 @@
-# Fern.fun-Server <sub>TEST</sub>
+# Fern.fun-Server <sub>[Live demo][link8]</sub>
 
 <p align="center">
   <img alt="Logo" height="300px" src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" />
@@ -27,3 +27,4 @@
 [link5]: https://openweathermap.org/current
 [link6]: https://www.php.net
 [link7]: https://github.com/Shaking-Donut
+[link8]: http://fern.myftp.org
