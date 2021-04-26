@@ -50,24 +50,31 @@
             </div>
         </div>
         
+        <!-- macOS -->
+        <div class="panel_info">
+            <div class="info">
+            <p>macOS</p>
+            <p class="center"><?php macos_update('https://ipsw.me/MacBookPro17,1'); ?></p>
+            </div>
+        </div>
         <!-- <div class="panel_info span-2">
             <canvas></canvas>
         </div> -->
 
 
         <!-- POPUP
-        <div class="popup" id="popup">
+          <div class="popup" id="popup">
             <div style="position: relative; height: 100%; width: 100%;">
             <a class="close" id="close"></a>
-                <form action="" method="post"> 
+              <form action="" method="post"> 
                 <h1>Subscribe</h1>
                 <p>Let us inform you when the new iOS update comes live! <br/>
                 Give us your email and we will send you updates as soon as they become available. </p>
                 <input type="email" name="email" class="" placeholder="example@example.example" value=""  require>
                 <input type="submit" name="subscribe" value="Subscribe" id="subscribe">
-            </form>
+              </form>
             </div>
-        </div> -->
+          </div> -->
 
         <script>
             // new Chart(document.getElementById("line-chart_bitcoin"), {

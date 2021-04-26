@@ -4,13 +4,13 @@ session_start();
 //USD value
 function usd_value(){
     $api = json_decode((file_get_contents("http://api.nbp.pl/api/exchangerates/tables/A/?format=json")));
-    echo round($api[0]->rates[1]->mid, 2);
+    echo number_format($api[0]->rates[1]->mid, 2);
 }
 
 //EUR value
 function eur_value(){
     $api = json_decode((file_get_contents("http://api.nbp.pl/api/exchangerates/tables/A/?format=json")));
-    echo round($api[0]->rates[7]->mid, 2);
+    echo number_format($api[0]->rates[7]->mid, 2);
 }
 
 //BTC value
@@ -19,11 +19,10 @@ function btc_value($cur){
     $api1 = json_decode(file_get_contents("https://blockchain.info/ticker"));
     $bitcoin = $api1->USD->last;
     $a = $api1->USD->last * $api[0]->rates[1]->mid;
-
     if($cur == 'usd'){
         echo "$".round($bitcoin,1);
     }else if($cur == 'pln'){
-        echo round($a,1)." zł";
+        echo number_format($a,2)." zł";
     }
 }
 
@@ -37,7 +36,7 @@ function eth_value($cur){
     if($cur == 'usd'){
         echo "$".round($eth,1);
     }else if($cur == 'pln'){
-        echo round($a,1)." zł";
+        echo number_format($a,2)." zł";
     }
 }
 
@@ -52,7 +51,7 @@ function gold_value(){
     $e = explode(',',$d[1]);
 
     $value = (float) $e[0].$e[1];
-    echo round($value * $api_usd[0]->rates[1]->mid,1);
+    echo number_format($value * $api_usd[0]->rates[1]->mid,2);
 }
 
 //Generated chart labels bitcoin

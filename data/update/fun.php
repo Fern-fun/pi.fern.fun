@@ -48,5 +48,9 @@ function leagueoflegends(){
     echo $api[0];
 }
 
+function macos_update($api){
+    $output = shell_exec('python3 /var/www/py/update/macos.py '.$api);
+    echo $output;
+}
 
 ?>
