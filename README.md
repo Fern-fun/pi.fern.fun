@@ -41,7 +41,7 @@ These instructions will get you a copy of the project up and running on your loc
 * [gpiozero](https://gpiozero.readthedocs.io/en/stable/)
 * [yfinance](https://pypi.org/project/yfinance/ )
 * [Weather API by Openweathermap.org](https://openweathermap.org/current)
-```python
+```php
 https://api.openweathermap.org/data/2.5/weather?&appid=
 ```
 <!-- 
