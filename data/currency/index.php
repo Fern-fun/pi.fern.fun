@@ -67,7 +67,7 @@
             <canvas id="line-chart_eth" width="550px" height="550px"></canvas>
         </div>
 
-        <!-- GOLD To PLN -->
+        <!-- Gold per ounce -->
         <div class="panel_info">
             <div class="info">
             <p>Gold per ounce</p>
@@ -75,7 +75,49 @@
             </div>
         </div>
 
-
+        <!-- Silver per ounce -->
+        <div class="panel_info">
+            <div class="info">
+            <p>Silver per ounce</p>
+            <p class="center"><?php silver_ounce(); ?> zł</p>
+            </div>
+        </div>
+        <!-- Platinum per ounce -->
+        <div class="panel_info">
+            <div class="info">
+            <p>Platinum per ounce</p>
+            <p class="center"><?php platinum_ounce(); ?> zł</p>
+            </div>
+        </div>
+        <!-- Palladium per ounce -->
+        <div class="panel_info">
+            <div class="info">
+            <p>Palladium per ounce</p>
+            <p class="center"><?php palladium_ounce(); ?> zł</p>
+            </div>
+        </div>
+        <!-- Template -->
+        <div class="panel_info">
+            <div class="info">
+            <p></p>
+            <p class="center"></p>
+            </div>
+        </div>
+        <!-- Template -->
+        <div class="panel_info">
+            <div class="info">
+            <p></p>
+            <p class="center"></p>
+            </div>
+        </div>
+        <!-- BTC Chart -->
+        <div class="panel_info span-2">
+            <canvas id="line-chart_bitcoin_m" width="550px" height="550px"></canvas>
+        </div>
+        <!-- ETH Chart -->
+        <div class="panel_info span-2">
+            <canvas id="line-chart_eth_m" width="550px" height="550px"></canvas>
+        </div>
 
         <script>
             new Chart(document.getElementById("line-chart_bitcoin"), {
@@ -84,7 +126,7 @@
                 labels: [<?php generated_chart_labels_data_bitcoin(); ?>],
                 datasets: [{ 
                 data: [<?php generated_chart_data_bitcoin(); ?>],
-                    label: "BTC TO PLN",
+                    label: "<?php echo date("d.m.Y"); ?> BTC TO PLN",
                     borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
                     fill: true
                 },
@@ -102,7 +144,43 @@
                 labels: [<?php generated_chart_labels_data_eth(); ?>],
                 datasets: [{ 
                 data: [<?php generated_chart_data_eth(); ?>],
-                    label: "ETH TO PLN",
+                    label: "<?php echo date("d.m.Y"); ?> ETH TO PLN",
+                    borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                    fill: true
+                },
+                ]},
+            options: {
+                title: {
+                display: true,
+                text: ''
+                }
+            }
+            });
+            new Chart(document.getElementById("line-chart_bitcoin_m"), {
+            type: 'line',
+            data: {
+                labels: [ <?php generated_char_labels_btc_m(); ?>],
+                datasets: [{ 
+                data: [<?php generated_char_data_btc_m(); ?>],
+                    label: "<?php echo date("m.Y"); ?> BTC TO PLN",
+                    borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                    fill: true
+                },
+                ]},
+            options: {
+                title: {
+                display: true,
+                text: ''
+                }
+            }
+            });
+            new Chart(document.getElementById("line-chart_eth_m"), {
+            type: 'line',
+            data: {
+                labels: [ <?php generated_char_labels_eth_m(); ?>],
+                datasets: [{ 
+                data: [<?php generated_char_data_eth_m(); ?>],
+                    label: "<?php echo date("m.Y"); ?> ETH TO PLN",
                     borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
                     fill: true
                 },
@@ -118,8 +196,7 @@
     </div>
 
     <footer>
-    <center>&#169; By<a href="http://fern.fun/en-us/"> Fern.fun</a></center>
+        <center>&#169; By<a href="http://fern.fun/"> Fern.fun</a></center>
     </footer>
 </body>
 </html>
-
