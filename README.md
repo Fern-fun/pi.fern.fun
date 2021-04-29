@@ -11,11 +11,6 @@
 [![License](https://img.shields.io/github/license/fern-fun/Fern.fun-Server.svg)](/LICENSE)
 
 </div>
----
-
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
 
 ## 📝 Table of Contents
 <!-- -  -->
