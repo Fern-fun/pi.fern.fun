@@ -6,7 +6,6 @@
 
 <div align="center">
 
-[![GitHub commits](https://img.shields.io/github/commits-since/Fern-fun/Fern.fun-Server/1.5.0.svg)](https://github.com/Fern-fun/Fern.fun-Server/tree/1.5.0)
 [![GitHub Issues](https://img.shields.io/github/issues/fern-fun/Fern.fun-Server.svg)](https://github.com/fern-fun/fern.fun/issues)
 [![License](https://img.shields.io/github/license/fern-fun/Fern.fun-Server.svg)](/LICENSE)
 
