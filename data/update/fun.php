@@ -1,7 +1,5 @@
 <?php 
-session_start();
-
-//IOS update 
+/*IOS update*/
 function ios_update($api){
     $api = file_get_contents($api);
     $a = explode('<tr',$api);
@@ -34,7 +32,7 @@ function ios_update($api){
     }
 }
 
-//Factorio update
+/*Factorio update*/
 function factorio_update(){
     $api = file_get_contents('https://factorio.com/');
     $a = explode('<dd class="text-right">',$api);
@@ -42,12 +40,13 @@ function factorio_update(){
     echo $b[0]." stable";
 }
 
-//league of legends update
+/*league of legends update*/
 function leagueoflegends(){
     $api = json_decode(file_get_contents('https://ddragon.leagueoflegends.com/api/versions.json'));
     echo $api[0];
 }
 
+/*macOS*/
 function macos_update($api){
     $output = shell_exec('python3 /var/www/py/update/macos.py '.$api);
     echo $output;

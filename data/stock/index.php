@@ -1,6 +1,5 @@
 <?php 
     require('./fun.php');
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
