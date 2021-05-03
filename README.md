@@ -22,7 +22,7 @@
 - [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
-
+Our RaspberryPI takes care of collecting various data connected to: current versions of a range of different apps, current currency data and usage data about itself, e.g. RAM usage, CPU temperature and usage. Now we mostly use it as a tool to test a spectrum of different libraries, tools and apps.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
