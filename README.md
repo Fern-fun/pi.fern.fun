@@ -7,16 +7,18 @@
 <div align="center">
 
 [![GitHub Issues](https://img.shields.io/github/issues/fern-fun/Fern.fun-Server.svg)](https://github.com/fern-fun/fern.fun/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/fern-fun/Fern.fun-Server.svg)](https://github.com/fern-fun/fern.fun/pulls)
 [![License](https://img.shields.io/github/license/fern-fun/Fern.fun-Server.svg)](/LICENSE)
 
 </div>
 
----
 
-<p align="center">
-    <br> 
-</p>
+
+
+
+
+    
+
+
 
 ## 📝 Table of Contents
 <!-- -  -->
@@ -29,7 +31,7 @@
 - [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
-
+Our RaspberryPI takes care of collecting various data connected to: current versions of a range of different apps, current currency data and usage data about itself, e.g. RAM usage, CPU temperature and usage. Now we mostly use it as a tool to test a spectrum of different libraries, tools and apps.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -40,6 +42,7 @@ These instructions will get you a copy of the project up and running on your loc
 * [psutil](https://pypi.org/project/psutil/)
 * [gpiozero](https://gpiozero.readthedocs.io/en/stable/)
 * [yfinance](https://pypi.org/project/yfinance/ )
+* Mail server
 * [Weather API by Openweathermap.org](https://openweathermap.org/current)
 ```php
 https://api.openweathermap.org/data/2.5/weather?&appid=

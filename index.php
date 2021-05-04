@@ -1,6 +1,5 @@
 <?php 
     require("./php/functions.php");
-
     $output = shell_exec('python3 /var/www/py/temp.py');
     $temp = (int)$output;
     $output1 = shell_exec('python3 /var/www/py/ram.py');
