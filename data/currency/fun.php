@@ -37,30 +37,6 @@ function eth_value($usd){
     echo number_format($api1[0]->current_price * $usd,2)." zł";
 }
 
-/*Gold value*/
-function gold_value($usd){
-    /*$gold = shell_exec('python3 /var/www/py/data/preciousmetals.py gold');
-    echo number_format((float)$gold * $usd,2); */
-}
-
-/*Silver value*/
-function silver_ounce($usd){
-    /*$silver = shell_exec('python3 /var/www/py/data/preciousmetals.py silver');
-    echo number_format((float)$silver * $usd,2);*/
-}
-
-/* Platinum value */
-function platinum_ounce($usd){
-    /* $platinum = shell_exec('python3 /var/www/py/data/preciousmetals.py platinum');
-    echo number_format((float)$platinum * $usd,2); */
-}
-
-/* Palladium value */
-function palladium_ounce($usd){
-    /*$palladium = shell_exec('python3 /var/www/py/data/preciousmetals.py palladium');
-    echo number_format((float)$palladium * $usd,2); */
-}
-
 /*Generated chart labels bitcoin*/
 function generated_chart_labels_data_bitcoin(){
     $url = '../../../[data]/currency/bitcoin/pln/'.date("d.m.Y").".txt";
