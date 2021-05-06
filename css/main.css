@@ -15,18 +15,26 @@ a {
 	color: white;
 }
 
-/* Meny */
+/* Menu */
+nav {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	background-color: #3e0748;
+}
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #3e0748;
 	animation: appear 500ms ease-out forwards;
+	display: flex;
 }
-li {
+/* li {
 	float: left;
-}
+} */
 li a {
 	display: block;
 	color: white;
@@ -38,14 +46,14 @@ li a:hover {
 	background-color: rgb(38, 1, 46);
 }
 /* Footer */
-footer{
+footer {
 	background-color: #3e0748;
 	width: 100%;
 	position: fixed;
 	bottom: 0px;
 	animation: appear 500ms ease-out forwards;
 }
-footer a{
+footer a {
 	text-decoration: none;
 }
 /* DIV */

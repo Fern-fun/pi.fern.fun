@@ -12,13 +12,21 @@
 </head>
 
 <body>
-    <ul>
+<nav>
+        <h1 style="display: none;" id="menu">Menu</h1>
+        <input type="checkbox" id="hamburger" style="display: none;">
+        <label for="hamburger" class="hamburger">
+            <div class="line"></div>
+        </label>
+        <ul>
         <li><a href="/">Home</a></li>
         <li><a href="../../update/">App update</a></li>
         <li><a href="../">Currency</a></li>
         <li><a href="../../stock">Stock</a></li>
         <li><a href="../../../status/">Status</a></li>
     </ul>
+</nav>
+    
     <center><img src="../../../img/raspi.webp" width="200px" height="180px"></center>
     <!-- PANEL -->
     <div class="panel_main">
