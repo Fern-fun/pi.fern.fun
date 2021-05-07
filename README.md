@@ -44,8 +44,8 @@ These instructions will get you a copy of the project up and running on your loc
 * [yfinance](https://pypi.org/project/yfinance/ )
 * Mail server
 * [Weather API by Openweathermap.org](https://openweathermap.org/current)
-```python
-api_weather = requests.get('http://api.openweathermap.org/data/2.5/weather?appid={key}&q={city},{countryname}&units=metric'.format(city=json['city'],countryname=json['country_code'],key=''))
+```php
+https://api.openweathermap.org/data/2.5/weather?&appid=
 ```
 <!-- 
 ### Installing

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background: #1d1f20;
+    color: white;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    margin: 50px;
+}
+input[type=text],input[type=password]{
+    margin: 5px;
+    padding: 8px;
+
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #24fe41;
+}
+input[type=text]:hover, input[type=password]:hover{
+    transition: 0.6s;
+    border-bottom: 2px solid white;
+}
+
+input[type=submit],input[type=reset]{
+    margin: 10px;
+    padding: 8px;
+
+    border: 2px solid #24fe41;
+    border-radius: 2px;
+    outline: none;
+    background: none;
+    color: white;
+
+    min-width: 80px;
+}
+
+input[type=submit]:hover,input[type=reset]:hover{
+    transition: 0.6s;
+
+    border: 2px solid white;
+    background: white;
+    color: black;
+}
