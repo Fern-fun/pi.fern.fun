@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from datetime import date
 from config import error_msg
+import os.path
 
 def eth_data():
     api_eth = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum'
@@ -18,11 +19,11 @@ def eth_data():
     json_pln = ra.json() 
     eth_pln = json_eth[0]['current_price'] * json_pln[0]['rates'][1]['mid']
     eth_usd = json_eth[0]['current_price']
-    currency_pln = str(eth_pln) + '/' + current_time + '\n'
-    currency_usd = str(eth_usd) + '/' + current_time + '\n'
+    currency_pln = str(eth_pln) + ',' + current_time + '\n'
+    currency_usd = str(eth_usd) + ',' + current_time + '\n'
 
-    path_pln = '/var/www/html/[data]/currency/ethereum/pln/' + data + ".txt"
-    path_usd = '/var/www/html/[data]/currency/ethereum/usd/' + data + ".txt"
+    path_pln = '../../data/currency/ethereum/pln/' + data + ".csv"
+    path_usd = '../../data/currency/ethereum/usd/' + data + ".csv"
 
     if eth_usd == 0 or eth_usd < 0:
         error_msg('Any error with eth API', 'Ethereum cost: {b} \n API: {url}'.format(b=eth_usd,url=api_eth))
@@ -30,10 +31,15 @@ def eth_data():
         error_msg('Any error with USD API', 'USD cost: {b} \n API: {url}'.format(b=eth_usd,url=api_pln))
     else:
         try:
-            with open(path_pln, 'a+') as file_pln, open(path_usd, 'a+') as file_usd:
-                file_pln.write(currency_pln)
-                file_usd.write(currency_usd)
+            if os.path.isfile(path_pln) and os.path.isfile(path_usd):
+                with open(path_pln, 'a+') as file_pln, open(path_usd, 'a+') as file_usd:
+                    file_pln.write(currency_pln)
+                    file_usd.write(currency_usd)
+            else:
+                x = open(path_pln,'a+').write('currency, time\n')
+                y = open(path_usd,'a+').write('currency, time\n')
+                with open(path_pln, 'a+') as file_pln, open(path_usd, 'a+') as file_usd:
+                    file_pln.write(currency_pln)
+                    file_usd.write(currency_usd)
         except EOFError as error:
             error_msg('Writing to file has error', error)
-
-eth_data()

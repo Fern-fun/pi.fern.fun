@@ -44,9 +44,6 @@ These instructions will get you a copy of the project up and running on your loc
 * [yfinance](https://pypi.org/project/yfinance/ )
 * Mail server
 * [Weather API by Openweathermap.org](https://openweathermap.org/current)
-```php
-https://api.openweathermap.org/data/2.5/weather?&appid=
-```
 <!-- 
 ### Installing
 
