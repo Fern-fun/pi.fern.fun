@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/main-phone.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/main-phone.css' %}">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
@@ -13,22 +13,30 @@
 <title>Serwer - Panel</title>
 </head>
 <body>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#update">App update</a></li>
-        <li><a href="{% url 'currency' %}">Currency</a></li>
-        <li><a href="#stock">Stock</a></li>
-    </ul>
+    <nav>
+        <h1 style="display: none;" id="menu">Menu</h1>
+        <input type="checkbox" id="hamburger" style="display: none;">
+        <label for="hamburger" class="hamburger">
+        <div class="line"></div>
+        </label>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'appupdate' %}">App update</a></li>
+            <li><a href="{% url 'currency' %}">Currency</a></li>
+            <li><a href="{% url 'stock' %}">Stock</a></li>
+            <li><a href="{% url 'status' %}">Status</a></li>
+        </ul>
+    </nav>
     <center><img src="{% static 'img/raspi.webp' %}" width="200px" height="180px"></center>
     
     <!-- PANEL -->
     <div class="panel_main">
 
-        <!-- Weather Panel -->  
+        <!-- Panel -->  
         <div class="panel_info">
             <div class="info">
-                <p>{{ city }}</p>
-                <p class="center">{{weather}}</p>
+                <p></p>
+                <p class="center"></p>
             </div>
         </div>
 

@@ -1,7 +1,6 @@
 import requests
 import json
 from datetime import datetime
-from datetime import date
 from config import error_msg
 import os.path
 
@@ -9,7 +8,7 @@ def bitcoin_data():
     api_btc = 'https://blockchain.info/ticker'
     api_pln = 'http://api.nbp.pl/api/exchangerates/tables/A/?format=json'
 
-    data = date.today().strftime("%d.%m.%Y")
+    data = datetime.today().strftime("%d.%m.%Y")
     current_time = datetime.now().strftime("%H:%M")
 
     r = requests.get(url=api_btc)
