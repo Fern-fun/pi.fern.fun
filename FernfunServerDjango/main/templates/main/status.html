@@ -1,47 +1,53 @@
-<?php require('./fun.php'); ?>
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/main-phone.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main-phone.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="icon" href="{% static 'img/raspi.webp' %}">
     <title>Panel - Status</title>
 </head>
 
 <body>
-    <ul>
-        <li><a href="../..">Home</a></li>
-        <li><a href="../data/update">App update</a></li>
-        <li><a href="../data/currency">Currency</a></li>
-        <li><a href="../data/stock">Stock</a></li>
-        <li><a href="#">Status</a></li>
-    </ul>
-    <center><img src="../../img/raspi.webp" width="200px" height="180px"></center>
-    <!-- PANEL -->
+    <nav>
+        <h1 style="display: none;" id="menu">Menu</h1>
+        <input type="checkbox" id="hamburger" style="display: none;">
+        <label for="hamburger" class="hamburger">
+        <div class="line"></div>
+        </label>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'appupdate' %}">App update</a></li>
+            <li><a href="{% url 'currency' %}">Currency</a></li>
+            <li><a href="{% url 'stock' %}">Stock</a></li>
+            <li><a href="{% url 'status' %}">Status</a></li>
+        </ul>
+    </nav>
+    <center><img src="{% static 'img/raspi.webp' %}" width="200px" height="180px"></center><!-- PANEL -->
     <div class="panel_main">
         <!-- Fern.fun -->
         <div class="panel_info">
             <div class="info">
-                <p>Fern.fun</p><?php  status_fern_fun(); ?>
+                <p>Fern.fun</p>{{ Fern|safe }}
             </div>
         </div><!-- Data collection services -->
         <div class="panel_info">
             <div class="info">
-                <p id="dcs" class="click">DCS</p><?php  status('data'); ?>
+                <p id="dcs" class="click">DCS</p>{{ DCS|safe }}
             </div>
         </div><!-- Stock data services -->
         <div class="panel_info">
             <div class="info">
-                <p id="sds" class="click">SDS</p><?php  status('stock'); ?>
+                <p id="sds" class="click">SDS</p>{{ SDS|safe }}
             </div>
         </div><!-- Discord Bot -->
         <div class="panel_info">
             <div class="info">
-                <p>Discord Bot</p><?php  status('ds'); ?>
+                <p>Discord Bot</p>{{ DS|safe }}
             </div>
         </div>
     </div>
