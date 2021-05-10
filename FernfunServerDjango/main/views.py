@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 #INDEX PAGE
-from main.mainPage import cpu, ram, obj_Disk, label__cpu, data__cpu, label__ram, data__ram
+from main.mainPage import cpu, ram, obj_Disk, ram_usage, cpu_temp
 #CURRENCY PAGE
 import main.currency
 #STATUS
@@ -15,6 +15,8 @@ import main.stock
 # Create your views here.
 def index(request,*args, **kwargs):
     print(request.user, request.META.get('REMOTE_ADDR'))
+    label__ram,data__ram = ram_usage()
+    label__cpu,data__cpu = cpu_temp()
     return render(request, 'main/index.html', {
         
         'cpu': "{}º".format(round(cpu.temperature, 1)),

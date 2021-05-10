@@ -12,17 +12,17 @@ def ds():
         return '<p class="center" id="ds" style="color:red;">Inactive</p>'
 
 def data():
-    pl = os.popen("ps -ef | grep 'python3 /var/www/py/data' | grep -v grep")
+    pl = os.popen("ps -ef | grep 'python3 /var/www/django/python/data/' | grep -v grep")
     a = pl.read()
-    if '/var/www/py/data' in a:
+    if '/var/www/django/python/data/' in a:
         return  '<p class="center" id="data" style="color:green;">Active</p>'
     else:
         return '<p class="center" id="data" style="color:red;">Inactive</p>'
 
 def stock():
-    pl = os.popen("ps -ef | grep '/var/www/py/stockPrice.py' | grep -v grep")
+    pl = os.popen("ps -ef | grep '/var/www/django/python/data/stock.py' | grep -v grep")
     a = pl.read()
-    if '/var/www/py/stockPrice.py' in a:
+    if '/var/www/django/python/data/stock.py' in a:
         return  '<p class="center" id="stock" style="color:green;">Active</p>'
     else:
         return '<p class="center" id="stock" style="color:red;">Inactive</p>'
