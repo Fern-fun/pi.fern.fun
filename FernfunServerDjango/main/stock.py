@@ -1,4 +1,5 @@
 from datetime import date
+from main.currency import api_usd
 import csv
 
 def TSLA():
@@ -9,6 +10,6 @@ def TSLA():
                 data = []
                 for row in csv_reader:
                     data.append(row[0])
-                return (data[len(data) - 1])
+                return (round(float(data[len(data) - 1]) * api_usd[0]['rates'][1]['mid'],2))
     except:
-        pass
+        return ''

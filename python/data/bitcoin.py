@@ -21,8 +21,8 @@ def bitcoin_data():
     currency_pln = str(bitcoin_pln) + ',' + current_time + '\n'
     currency_usd = str(bitcoin_usd) + ',' + current_time + '\n'
 
-    path_pln = '../../data/currency/bitcoin/pln/' + data + ".csv"
-    path_usd = '../../data/currency/bitcoin/usd/' + data + ".csv"
+    path_pln = '/var/www/django/data/currency/bitcoin/pln/' + data + ".csv"
+    path_usd = '/var/www/django/data/currency/bitcoin/usd/' + data + ".csv"
 
     if bitcoin_usd == 0 or bitcoin_usd < 0:
         error_msg('Any error with bitcoin API', 'Bitcoin cost: {b} \n API: {url}'.format(b=bitcoin_usd,url=api_btc))

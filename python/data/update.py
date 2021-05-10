@@ -34,7 +34,7 @@ def dataSave():
     api = requests.get('https://ddragon.leagueoflegends.com/api/versions.json').json()
     lol = api[0]
     
-    path = '../../data/update/' + data + ".csv"
+    path = '/var/www/django/data/update/' + data + ".csv"
     
     if os.path.isfile(path):
         with open(path, 'a+') as file:
@@ -43,4 +43,3 @@ def dataSave():
         x = open(path,'a+').write('macOS, iOS, factorio, lol, date \n')
         with open(path, 'a+') as file:
             file.write(" ".join(str(macOS + "," + iOS + "," + factorio + "," + lol + ',' + current_time + '\n').split()))
-

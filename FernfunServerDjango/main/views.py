@@ -29,6 +29,9 @@ def index(request,*args, **kwargs):
         })
 
 def currency(request,*args, **kwargs):
+    label_btc,data_btc,time = main.currency.btc_chart()
+    label_eth,data_eth = main.currency.eth_chart()
+    label_doge,data_doge = main.currency.doge_chart()
     return render(request, 'main/currency.html', {
         'usd': main.currency.usd,
         'eur': main.currency.eur,
@@ -36,6 +39,13 @@ def currency(request,*args, **kwargs):
         'eth_cost': main.currency.eth_cost,
         'doge_cost': main.currency.doge_cost,
         'gbp': main.currency.gbp,
+        'label_btc': label_btc,
+        'data_btc': data_btc,
+        'label_eth': label_eth,
+        'data_doge': data_doge,
+        'label_doge': label_doge,
+        'data_eth': data_eth,
+        'date': time,
     })
 
 def status(request,*args, **kwargs):
@@ -56,6 +66,6 @@ def appupdate(request,*args, **kwargs):
 
 def stock(request, *args, **kwargs):
     return render(request, 'main/stock.html', {
-        'TSLA': str(round(float(main.stock.TSLA()) * main.currency.api_usd[0]['rates'][1]['mid'],2)),
+        'TSLA': main.stock.TSLA(),
     })
 

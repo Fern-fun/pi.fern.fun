@@ -22,8 +22,8 @@ def eth_data():
     currency_pln = str(eth_pln) + ',' + current_time + '\n'
     currency_usd = str(eth_usd) + ',' + current_time + '\n'
 
-    path_pln = '../../data/currency/ethereum/pln/' + data + ".csv"
-    path_usd = '../../data/currency/ethereum/usd/' + data + ".csv"
+    path_pln = '/var/www/django/data/currency/ethereum/pln/' + data + ".csv"
+    path_usd = '/var/www/django/data/currency/ethereum/usd/' + data + ".csv"
 
     if eth_usd == 0 or eth_usd < 0:
         error_msg('Any error with eth API', 'Ethereum cost: {b} \n API: {url}'.format(b=eth_usd,url=api_eth))

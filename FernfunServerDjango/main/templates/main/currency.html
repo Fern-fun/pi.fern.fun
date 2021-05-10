@@ -78,7 +78,95 @@
             </div>
         </div>
         
+        <!-- -->
+        <div class="panel_info">
+            <div class="info">
+                <p></p>
+                <p class="center"> </p>
+            </div>
+        </div>
+
+        <!-- -->
+        <div class="panel_info">
+            <div class="info">
+                <p></p>
+                <p class="center"> </p>
+            </div>
+        </div>
+
+        <!-- BTC chart -->
+        <div class="panel_chart span-2">
+            <canvas id="line-chart_btc" width="550px" height="550px"></canvas>
+        </div>
+
+        <!-- ETH chart -->
+        <div class="panel_chart span-2">
+            <canvas id="line-chart_eth" width="550px" height="550px"></canvas>
+        </div>
+
+        <!-- DOGE chart -->
+        <div class="panel_chart span-2">
+            <canvas id="line-chart_doge" width="550px" height="550px"></canvas>
+        </div>
     </div>
+    <script>
+        new Chart(document.getElementById("line-chart_btc"), {
+        type: 'line',
+        data: {
+            labels: [ {{ label_btc|safe }} ],
+            datasets: [{ 
+                data: [ {{ data_btc|safe }}],
+                label: "[PLN]Bitcoin {{ date|safe }}",
+                borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                fill: true
+            },
+            ]},
+        options: {
+            title: {
+            display: true,
+            text: ''
+            }
+        }
+        });
+
+        new Chart(document.getElementById("line-chart_eth"), {
+        type: 'line',
+        data: {
+            labels: [ {{ label_eth|safe }} ],
+            datasets: [{ 
+                data: [ {{ data_eth|safe }}],
+                label: "[PLN]Ethereum {{ date|safe }}",
+                borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                fill: true
+            },
+            ]},
+        options: {
+            title: {
+            display: true,
+            text: ''
+            }
+        }
+        });
+
+        new Chart(document.getElementById("line-chart_doge"), {
+        type: 'line',
+        data: {
+            labels: [ {{ label_doge|safe }} ],
+            datasets: [{ 
+                data: [ {{ data_doge|safe }}],
+                label: "[PLN]DOGE {{ date|safe }}",
+                borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                fill: true
+            },
+            ]},
+        options: {
+            title: {
+            display: true,
+            text: ''
+            }
+        }
+        });
+    </script>
     <footer>
         <center>&#169; By<a href="http://fern.fun/"> Fern.fun</a></center>
     </footer>
