@@ -58,7 +58,7 @@ def status(request,*args, **kwargs):
 
 def appupdate(request,*args, **kwargs):
     return render(request, 'main/appupdate.html', {
-        'iOS': main.appupdate.macOS(),
+        'iOS': main.appupdate.iOS(),
         'factorio': main.appupdate.factorio(),
         'lol': main.appupdate.lol(),
         'macOS': main.appupdate.macOS(),
