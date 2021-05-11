@@ -5,18 +5,22 @@ import requests
 import json
 import csv
 
+#Get Ram usage
 def ram():
     ram = psutil.virtual_memory()[2]
     return '{}%'.format(ram)
 
+#Get cpu temperature
 def cpu():
     cpu = CPUTemperature()
     return "{}º".format(round(cpu.temperature, 1))
 
+#Get Disk capacity
 def disk():
     obj_Disk = psutil.disk_usage('/')
     return '{}/{}GB'.format(round(obj_Disk.free / (1024.0 ** 3),0),round(obj_Disk.total / (1024.0 ** 3),0))
 
+#GET Version
 def version():
     return requests.get('https://raw.githubusercontent.com/Fern-fun/Fern.fun-Server/main/.version').text
 

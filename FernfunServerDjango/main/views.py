@@ -11,7 +11,6 @@ import main.appupdate
 #STOCK
 import main.stock
 
-
 # Create your views here.
 def index(request,*args, **kwargs):
     print(request.user, request.META.get('REMOTE_ADDR'))
@@ -33,13 +32,14 @@ def currency(request,*args, **kwargs):
     label_btc,data_btc,time = main.currency.btc_chart()
     label_eth,data_eth = main.currency.eth_chart()
     label_doge,data_doge = main.currency.doge_chart()
+    usd,eur,gbp = main.currency.currencies()
     return render(request, 'main/currency.html', {
-        'usd': main.currency.usd,
-        'eur': main.currency.eur,
-        'btc_cost': main.currency.btc_cost,
-        'eth_cost': main.currency.eth_cost,
-        'doge_cost': main.currency.doge_cost,
-        'gbp': main.currency.gbp,
+        'usd': usd,
+        'eur': eur,
+        'btc_cost': main.currency.btc(),
+        'eth_cost': main.currency.eth(),
+        'doge_cost': main.currency.doge(),
+        'gbp': gbp,
         'label_btc': label_btc,
         'data_btc': data_btc,
         'label_eth': label_eth,
