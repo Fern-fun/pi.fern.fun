@@ -5,10 +5,20 @@ import requests
 import json
 import csv
 
-ram = psutil.virtual_memory()[2]
-cpu = CPUTemperature()
-obj_Disk = psutil.disk_usage('/')
-disc = "%a/%f" % (obj_Disk.free / (1024.0 ** 3),obj_Disk.total / (1024.0 ** 3))
+def ram():
+    ram = psutil.virtual_memory()[2]
+    return '{}%'.format(ram)
+
+def cpu():
+    cpu = CPUTemperature()
+    return "{}º".format(round(cpu.temperature, 1))
+
+def disk():
+    obj_Disk = psutil.disk_usage('/')
+    return '{}/{}GB'.format(round(obj_Disk.free / (1024.0 ** 3),0),round(obj_Disk.total / (1024.0 ** 3),0))
+
+def version():
+    return requests.get('https://raw.githubusercontent.com/Fern-fun/Fern.fun-Server/main/.version').text
 
 #RAM USAGE
 def ram_usage():

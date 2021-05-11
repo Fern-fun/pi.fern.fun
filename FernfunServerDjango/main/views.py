@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 #INDEX PAGE
-from main.mainPage import cpu, ram, obj_Disk, ram_usage, cpu_temp
+from main.mainPage import cpu, ram, disk, ram_usage, cpu_temp, version
 #CURRENCY PAGE
 import main.currency
 #STATUS
@@ -19,9 +19,10 @@ def index(request,*args, **kwargs):
     label__cpu,data__cpu = cpu_temp()
     return render(request, 'main/index.html', {
         
-        'cpu': "{}º".format(round(cpu.temperature, 1)),
-        'ram': '{}%'.format(ram),
-        'disc': '{}/{}GB'.format(round(obj_Disk.free / (1024.0 ** 3),0),round(obj_Disk.total / (1024.0 ** 3),0)),
+        'cpu': cpu(),
+        'ram': ram(),
+        'disc': disk(),
+        'version': version(),
         'label_cpu': label__cpu,
         'data_cpu': data__cpu,
         'label_ram': label__ram,
