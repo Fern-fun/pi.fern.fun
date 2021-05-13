@@ -35,8 +35,8 @@
         <!-- Panel -->  
         <div class="panel_info">
             <div class="info">
-                <p></p>
-                <p class="center"></p>
+                <p>Version</p>
+                <p class="center">{{ version|safe }}</p>
             </div>
         </div>
 
@@ -76,6 +76,11 @@
             <canvas id="line-chart_ram" width="550px" height="550px"></canvas>
         </div>
 
+        <!-- CPU usage chart -->
+        <div class="panel_chart span-2">
+            <canvas id="line-chart_cpu_usage" width="550px" height="550px"></canvas>
+        </div>
+
         <!-- <div class="panel_info span-2">
         <canvas id="line-chart_bitcoin" width="550px" height="550px"></canvas>
         </div>
@@ -106,41 +111,60 @@
         </div> -->
         <script>
             new Chart(document.getElementById("line-chart_temp"), {
-            type: 'line',
-            data: {
-                labels: [ {{ label_cpu|safe }} ],
-                datasets: [{ 
-                    data: [ {{ data_cpu|safe }}],
-                    label: "CPU temperature [º]",
-                    borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
-                    fill: true
-                },
-                ]},
-            options: {
-                title: {
-                display: true,
-                text: ''
+                type: 'line',
+                data: {
+                    labels: [ {{ label_cpu|safe }} ],
+                    datasets: [{ 
+                        data: [ {{ data_cpu|safe }}],
+                        label: "CPU temperature [º]",
+                        borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                        fill: true
+                    },
+                    ]},
+                options: {
+                    title: {
+                    display: true,
+                    text: ''
+                    }
                 }
-            }
             });
 
             new Chart(document.getElementById("line-chart_ram"), {
-            type: 'line',
-            data: {
-                labels: [{{ label_ram|safe }} ],
-                datasets: [{ 
-                data: [{{ data_ram|safe }}],
-                    label: "Ram usage [%]",
-                    borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
-                    fill: true
-                },
-                ]},
-            options: {
-                title: {
-                display: true,
-                text: ''
+                type: 'line',
+                data: {
+                    labels: [{{ label_ram|safe }} ],
+                    datasets: [{ 
+                    data: [{{ data_ram|safe }}],
+                        label: "Ram usage [%]",
+                        borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                        fill: true
+                    },
+                    ]},
+                options: {
+                    title: {
+                    display: true,
+                    text: ''
+                    }
                 }
-            }
+            });
+
+            new Chart(document.getElementById("line-chart_cpu_usage"), {
+                type: 'line',
+                data: {
+                    labels: [{{ label_cpu_usage|safe }} ],
+                    datasets: [{ 
+                    data: [{{ data_cpu_usage|safe }}],
+                        label: "CPU usage [%]",
+                        borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                        fill: true
+                    },
+                    ]},
+                options: {
+                    title: {
+                    display: true,
+                    text: ''
+                    }
+                }
             });
         </script>
     </div>

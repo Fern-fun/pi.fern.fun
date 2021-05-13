@@ -11,15 +11,6 @@
 
 </div>
 
-
-
-
-
-
-    
-
-
-
 ## 📝 Table of Contents
 <!-- -  -->
 <!-- - [Deployment](#deployment) -->
@@ -43,7 +34,6 @@ These instructions will get you a copy of the project up and running on your loc
 * [gpiozero](https://gpiozero.readthedocs.io/en/stable/)
 * [yfinance](https://pypi.org/project/yfinance/ )
 * Mail server
-* [Weather API by Openweathermap.org](https://openweathermap.org/current)
 <!-- 
 ### Installing
 
@@ -94,6 +84,7 @@ Add additional notes about how to deploy this on a live system. -->
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Python](https://www.python.org) 
+- [HTML](https://html.com)
 - [CSS](https://html.com)
 - [SASS](https://sass-lang.com)
 - [JS](https://www.javascript.com) 

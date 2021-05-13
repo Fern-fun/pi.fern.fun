@@ -1,15 +1,12 @@
 import requests
 import csv
 from datetime import date
-
 api_usd = requests.get('http://api.nbp.pl/api/exchangerates/tables/A/?format=json').json()
 
-#Get currencies
 def currencies():
     api_usd = requests.get('http://api.nbp.pl/api/exchangerates/tables/A/?format=json').json()
     return "{:,} zł".format(round(api_usd[0]['rates'][1]['mid'],2)), "{:,} zł".format(round(api_usd[0]['rates'][7]['mid'],2)), "{:,} zł".format(round(api_usd[0]['rates'][10]['mid'],2))
 
-#Get btc value
 def btc():
     try:
         with open('/var/www/django/data/currency/bitcoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
@@ -22,7 +19,6 @@ def btc():
     except:
         return ''
 
-#Get eth value
 def eth():
     try:
         with open('/var/www/django/data/currency/ethereum/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
@@ -35,7 +31,6 @@ def eth():
     except:
         return ''
 
-#Get doge value
 def doge():
     try:
         with open('/var/www/django/data/currency/dogecoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
@@ -48,7 +43,6 @@ def doge():
     except:
         return ''
 
-#Get btc chart data
 def btc_chart():
     label__btc = ''
     data__btc = ''
@@ -67,7 +61,6 @@ def btc_chart():
         pass
     return label__btc,data__btc,time
 
-#Get eth chart data
 def eth_chart():
     label__eth = ''
     data__eth = ''
@@ -84,7 +77,6 @@ def eth_chart():
     
     return label__eth, data__eth
 
-#Get doge chart data
 def doge_chart():
     label__doge = ''
     data__doge = ''
@@ -100,3 +92,4 @@ def doge_chart():
                     data__doge += '"{}",'.format(round(float(row[0]),2))
     
     return label__doge, data__doge
+
