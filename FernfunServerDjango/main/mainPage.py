@@ -26,7 +26,7 @@ def ram_usage():
     label__ram = ''
     data__ram = ''
     try:
-        with open('/var/www/django/data/ram/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+        with open('/home/web/django/data/ram/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 line_count = 0
                 user = []
@@ -45,7 +45,7 @@ def cpu_temp():
     label__cpu = ''
     data__cpu = ''
     try:
-        with open('/var/www/django/data/temp/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file1:
+        with open('/home/web/django/data/temp/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file1:
                 csv_reader = csv.reader(csv_file1, delimiter=',')
                 line_count = 0
                 user = []
@@ -64,7 +64,7 @@ def cpu_usage():
     label__cpu = ''
     data__cpu = ''
     try:
-        with open('/var/www/django/data/cpu/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file1:
+        with open('/home/web/django/data/cpu/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file1:
                 csv_reader = csv.reader(csv_file1, delimiter=',')
                 line_count = 0
                 user = []

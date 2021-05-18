@@ -9,7 +9,7 @@ def currencies():
 
 def btc():
     try:
-        with open('/var/www/django/data/currency/bitcoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+        with open('/home/web/django/data/currency/bitcoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 line_count = 0
                 data = []
@@ -21,7 +21,7 @@ def btc():
 
 def eth():
     try:
-        with open('/var/www/django/data/currency/ethereum/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+        with open('/home/web/django/data/currency/ethereum/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 line_count = 0
                 data = []
@@ -33,7 +33,7 @@ def eth():
 
 def doge():
     try:
-        with open('/var/www/django/data/currency/dogecoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+        with open('/home/web/django/data/currency/dogecoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 line_count = 0
                 data = []
@@ -48,7 +48,7 @@ def btc_chart():
     data__btc = ''
     time = '{}'.format(date.today().strftime("%d.%m.%Y"))
     try:
-        with open('/var/www/django/data/currency/bitcoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),encoding='utf-8') as csv_file:
+        with open('/home/web/django/data/currency/bitcoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file, delimiter=',')
                 line_count = 0
                 for row in csv_reader:
@@ -65,7 +65,7 @@ def eth_chart():
     label__eth = ''
     data__eth = ''
     
-    with open('/var/www/django/data/currency/ethereum/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),encoding='utf-8') as csv_file:
+    with open('/home/web/django/data/currency/ethereum/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),encoding='utf-8') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
             for row in csv_reader:
@@ -81,7 +81,7 @@ def doge_chart():
     label__doge = ''
     data__doge = ''
     
-    with open('/var/www/django/data/currency/dogecoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),encoding='utf-8') as csv_file:
+    with open('/home/web/django/data/currency/dogecoin/pln/{}.csv'.format(date.today().strftime("%d.%m.%Y")),encoding='utf-8') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
             for row in csv_reader:

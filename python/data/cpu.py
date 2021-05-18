@@ -15,5 +15,3 @@ def cpu_data():
         x = open(path,'a+').write('cpu usage, time')
         with open(path, 'a+') as file:
             file.write(cpu)
-
-cpu_data()

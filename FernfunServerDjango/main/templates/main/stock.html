@@ -35,10 +35,34 @@
         <div class="panel_info">
             <div class="info">
                 <p>TSLA</p>
-                <p class="center">{{ TSLA }} zł</p>
+                <p class="center">{{ TSLA }}</p>
             </div>
         </div>
+        <!-- TSLA chart -->
+        <div class="panel_chart span-2">
+            <canvas id="line-chart_tsla" width="550px" height="550px"></canvas>
+        </div>
     </div>
+    <script>
+                new Chart(document.getElementById("line-chart_tsla"), {
+        type: 'line',
+        data: {
+            labels: [ {{ label_tsla|safe }} ],
+            datasets: [{ 
+                data: [ {{ data_tsla|safe }}],
+                label: "[USD]TSLA {{ date|safe }}",
+                borderColor: "#" + Math.floor(Math.random()*16777215).toString(16),
+                fill: true
+            },
+            ]},
+        options: {
+            title: {
+            display: true,
+            text: ''
+            }
+        }
+        });
+    </script>
     <footer>
         <center>&#169; By<a href="http://fern.fun/"> Fern.fun</a></center>
     </footer>

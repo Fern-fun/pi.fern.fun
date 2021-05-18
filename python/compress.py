@@ -1,5 +1,5 @@
 
-path = ['../index.php','../data/currency/index.php','../data/currency/charts/index.php','../data/stock/index.php','../data/update/index.php','../data/currency/fun.php','../data/stock/fun.php','../data/update/fun.php', '../php/functions.php']
+path = []
 
 for x in path:
     html = open(x,'r+').readlines()

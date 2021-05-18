@@ -69,7 +69,11 @@ def appupdate(request,*args, **kwargs):
     })
 
 def stock(request, *args, **kwargs):
+    label_tsla,data_tsla,time = main.stock.TSLA_chart()
     return render(request, 'main/stock.html', {
         'TSLA': main.stock.TSLA(),
+        'label_tsla': label_tsla,
+        'data_tsla': data_tsla,
+        'date': time,
     })
 
