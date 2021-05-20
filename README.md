@@ -30,28 +30,28 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites <a name = "prerequisites"></a>
 
-* [psutil](https://pypi.org/project/psutil/)
+* [django](https://www.djangoproject.com)
+* [PyMails](https://pypi.org/project/PyMails/)
+* [yfinance](https://pypi.org/project/yfinance/)
 * [gpiozero](https://gpiozero.readthedocs.io/en/stable/)
-* [yfinance](https://pypi.org/project/yfinance/ )
-* Mail server
-<!-- 
+* [bs4](https://pypi.org/project/beautifulsoup4/)
+* [psutil](https://pypi.org/project/psutil/)
+* [RPi]()
+* [lgpio]()
+* [RPIO]()
+* [pigpio]()
+* [RPI.GPIO]()
+* [quantiphy](https://pypi.org/project/quantiphy/)
+* [Mail server]()
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
 ```
-Give the example
+pip install -r req.txt 
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo. -->
+<!-- End with an example of getting some data out of the system or using it for a little demo. -->
 
 <!-- ## 🔧 Running the tests <a name = "tests"></a>
 
