@@ -1,11 +1,12 @@
-from django.contrib import admin
 from django.urls import path
-from main.views import index, currency, status, appupdate, stock
+from django.urls.conf import include
+import main.views
 
 urlpatterns = [
-    path('', index),
-    path('currency', currency, name='currency'),
-    path('status', status, name='status'),
-    path('appupdate', appupdate, name='appupdate'),
-    path('stock', stock, name='stock'),
+    path('', main.views.index),
+    path('currency', main.views.currency, name='currency'),
+    path('status', main.views.status, name='status'),
+    path('appupdate', main.views.appupdate, name='appupdate'),
+    path('stock', main.views.stock, name='stock'),
+    path('tools', main.views.tools, name='tools'),
 ]

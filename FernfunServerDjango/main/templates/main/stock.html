@@ -13,20 +13,7 @@
 <title>Panel - Stock</title>
 </head>
 <body>
-    <nav>
-        <h1 style="display: none;" id="menu">Menu</h1>
-        <input type="checkbox" id="hamburger" style="display: none;">
-        <label for="hamburger" class="hamburger">
-        <div class="line"></div>
-        </label>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="{% url 'appupdate' %}">App update</a></li>
-            <li><a href="{% url 'currency' %}">Currency</a></li>
-            <li><a href="{% url 'stock' %}">Stock</a></li>
-            <li><a href="{% url 'status' %}">Status</a></li>
-        </ul>
-    </nav>
+    {% include '../navbar.html' %}
     <center><img src="{% static 'img/raspi.webp' %}" width="200px" height="180px"></center>
     
     <!-- PANEL -->
@@ -63,9 +50,7 @@
         }
         });
     </script>
-    <footer>
-        <center>&#169; By<a href="http://fern.fun/"> Fern.fun</a></center>
-    </footer>
+    {% include '../footer.html' %}
 </body>
 </html>
 

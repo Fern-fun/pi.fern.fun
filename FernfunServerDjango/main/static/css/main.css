@@ -13,6 +13,8 @@ body {
 }
 a {
 	color: white;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 /* Menu */
@@ -23,6 +25,7 @@ nav {
 	right: 0;
 	z-index: 3;
 	background-color: #3e0748;
+	box-shadow: 0 0 5px 0px rgba(0,0,0, 0.2);
 }
 ul {
 	list-style-type: none;

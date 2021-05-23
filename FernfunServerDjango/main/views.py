@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+#FORMS
+
 #INDEX PAGE
 from main.mainPage import cpu, ram, disk, ram_usage, cpu_temp, version, cpu_usage
 #CURRENCY PAGE
@@ -10,7 +12,8 @@ import main.status
 import main.appupdate
 #STOCK
 import main.stock
-
+#TOOLS
+import main.tools
 
 # Create your views here.
 def index(request,*args, **kwargs):
@@ -77,3 +80,10 @@ def stock(request, *args, **kwargs):
         'date': time,
     })
 
+def tools(request, *args, **kwargs):
+    portscan = main.tools.portscan(request.POST.get('network-scan'))
+    passowrd = main.tools.password_gen(request.POST.get('length-paswd'))
+    return render(request, 'tools/index.html', {
+        'password': passowrd,
+        'portscan': portscan,
+    })
