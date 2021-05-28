@@ -1,0 +1,12 @@
+django
+PyMails
+yfinance
+gpiozero
+bs4
+psutil
+RPi
+lgpio
+RPIO
+pigpio
+RPI.GPIO
+quantiphy
