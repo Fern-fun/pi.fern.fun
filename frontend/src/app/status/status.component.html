@@ -1,0 +1,23 @@
+<div class="grid">
+    <app-panel>
+        <p title>Fern.fun</p>
+        <p content [ngClass]="{online: fernFunIsActive === true, offline: fernFunIsActive === false}"> {{
+            fernfunStatus
+            }} </p>
+    </app-panel>
+    <app-panel>
+        <p title (click)="changeState($event)" id="dcs"> {{ DCS }} </p>
+        <p content [ngClass]="{online: dcsIsActive === true, offline: dcsIsActive === false}"> {{ dcsStatus }}
+        </p>
+    </app-panel>
+    <app-panel>
+        <p title (click)="changeState($event)" id="sds"> {{ SDS }} </p>
+        <p content [ngClass]="{online: sdsIsActive === true, offline: sdsIsActive === false}"> {{ sdsStatus }}
+        </p>
+    </app-panel>
+    <app-panel>
+        <p title>Discord bot</p>
+        <p content [ngClass]="{online: discordBotIsActive === true, offline: discordBotIsActive === false}"> {{
+            discordbotStatus }} </p>
+    </app-panel>
+</div>

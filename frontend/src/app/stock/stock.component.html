@@ -1,0 +1,8 @@
+<div class="grid">
+    <app-panel>
+        <p title>TSLA</p>
+        <p content> {{ tslaValue }} </p>
+    </app-panel>
+    <app-chart class="span-2 panel" style="padding: 10px" [data]="lineChartData" [labels]="lineChartLabels">
+    </app-chart>
+</div>

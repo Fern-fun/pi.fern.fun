@@ -1,0 +1,30 @@
+{{ connection1 | async }}
+{{ connection2 | async }}
+<div class="grid">
+    <app-panel>
+        <p title>Version</p>
+        <p content> {{ versionNumber }} </p>
+    </app-panel>
+    <app-panel>
+        <p title>CPU Temperature</p>
+        <p content> {{ cpuTemp }} </p>
+    </app-panel>
+    <app-panel>
+        <p title>CPU usage</p>
+        <p content> {{ cpuUsage }} </p>
+    </app-panel>
+    <app-panel>
+        <p title>Memory Usage</p>
+        <p content> {{ memUsage }} </p>
+    </app-panel>
+    <app-panel>
+        <p title>Disk</p>
+        <p content> {{ diskUsage }} </p>
+    </app-panel>
+    <app-chart class="span-2 panel" [data]="lineChartDataRAM" [labels]="lineChartLabelsRAM" style="padding: 10px">
+    </app-chart>
+    <app-chart class="span-2 panel" [data]="lineChartDataCPU" [labels]="lineChartLabelsCPU" style="padding: 10px">
+    </app-chart>
+    <app-chart class="span-2 panel" [data]="lineChartDataTemp" [labels]="lineChartLabelsTemp" style="padding: 10px">
+    </app-chart>
+</div>

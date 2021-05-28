@@ -1,0 +1,15 @@
+<nav>
+    <h1 style="display: none;" id="Menu">Menu</h1>
+    <input type="checkbox" id="hamburger" style="display: none;">
+    <label for="hamburger" class="hamburger">
+        <div class="line"></div>
+    </label>
+    <ul id="menu">
+        <li><a routerLink="/home" (click)="setDocTitle('Home')">Home</a></li>
+        <li><a routerLink="/appUpdate" (click)="setDocTitle('App Update')">App update</a></li>
+        <li><a routerLink="/currency" (click)="setDocTitle('Currency')">Currency</a></li>
+        <li><a routerLink="/stock" (click)="setDocTitle('Stock')">Stock</a></li>
+        <li><a routerLink="/status" (click)="setDocTitle('Status')">Status</a></li>
+        <!-- <li><a routerLink="/tools">Tools</a></li> -->
+    </ul>
+</nav>
