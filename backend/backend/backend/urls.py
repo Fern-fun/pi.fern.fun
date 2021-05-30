@@ -35,7 +35,9 @@ urlpatterns = [
     path('chart/ram/', api.views.chart_ram),
     path('chart/cpu/temp/', api.views.chart_cpu_temp),
     path('chart/cpu/usage/', api.views.chart_cpu_usage),
-    path('chart/stock/tsla/', api.views.chart_tsla),
+    
+    
+    path('chart/stock/<str:name>/', api.views.chart_stock),
     
     path('chart/btc/<str:name>/', api.views.chart_btc),
     path('chart/eth/<str:name>/', api.views.chart_eth),

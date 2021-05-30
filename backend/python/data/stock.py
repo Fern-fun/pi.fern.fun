@@ -22,5 +22,8 @@ def Stock(id):
 
 while True:
     Stock('TSLA')
+    Stock('AAPL')
+    Stock('MSFT')
+    
     time.sleep(900)
 

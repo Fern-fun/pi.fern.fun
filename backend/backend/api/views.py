@@ -5,7 +5,7 @@ from datetime import datetime
 from gpiozero import CPUTemperature
 import json, psutil, requests, csv
 
-from api.other import btc, eth, doge, shib, currencies, tsla, ds, data, stock_status, fern, chart_ram_usage, chart_cpu_temp_data, chart_btc_data, chart_eth_data, chart_doge_data, chart_tsla_data, chart_cpu_usage_data
+from api.other import btc, eth, doge, shib, currencies, stocks, ds, data, stock_status, fern, chart_ram_usage, chart_cpu_temp_data, chart_btc_data, chart_eth_data, chart_doge_data, chart_stock_data, chart_cpu_usage_data
 
 # Create your views here.
 def home(request):
@@ -58,7 +58,8 @@ def currency_usd(request):
 def stock(request):
     response = ''
     if request.method == 'GET':
-        response = json.dumps({'tsla': tsla()})
+        tsla, aapl, msft = stocks()
+        response = json.dumps({'tsla': tsla, 'aapl': aapl, 'msft': msft})
     return HttpResponse(response, content_type='text/json')
 
 def status(request):
@@ -112,10 +113,11 @@ def chart_doge(request, name):
             response = json.dumps({'label': label__, 'data': data__})
     return HttpResponse(response, content_type='text/json')
 
-def chart_tsla(request):
+def chart_stock(request, name):
     response = ''
     if request.method == 'GET':
-        label__, data__ = chart_tsla_data()
-        response = json.dumps({'label': label__, 'data': data__})
+        if name != None and name != '':
+            label__, data__ = chart_stock_data(name)
+            response = json.dumps({'label': label__, 'data': data__})
     return HttpResponse(response, content_type='text/json')
 

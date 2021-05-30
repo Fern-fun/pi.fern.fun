@@ -104,17 +104,34 @@ def shib(x):
         except:
             return ''
 
-def tsla():
-    try:
-        with open('/home/web/malinka/backend/data/stock/TSLA/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
-                csv_reader = csv.reader(csv_file, delimiter=',')
-                line_count = 0
-                data = []
-                for row in csv_reader:
-                    data.append(row[0])
-                return "{:,}".format((round(float(data[len(data) - 1]) * api_usd[0]['rates'][1]['mid'],2)))
-    except:
-        return ''
+def stocks():
+    tsla=aapl=msft=''
+    with open('/home/web/malinka/backend/data/stock/TSLA/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            line_count = 0
+            data = []
+            for row in csv_reader:
+                data.append(row[0])
+            tsla = "{:,}".format(round(float(data[len(data) - 1])))
+        
+    with open('/home/web/malinka/backend/data/stock/AAPL/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            line_count = 0
+            data = []
+            for row in csv_reader:
+                data.append(row[0])
+            aapl = "{:,}".format(round(float(data[len(data) - 1])))
+    
+    with open('/home/web/malinka/backend/data/stock/MSFT/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            line_count = 0
+            data = []
+            for row in csv_reader:
+                data.append(row[0])
+            msft = "{:,}".format(round(float(data[len(data) - 1])))
+    
+    return tsla, aapl, msft
+
 
 def ds():
     pl = os.popen("ps -ef | grep 'Discord.js/Fern.fun' | grep -v grep")
@@ -252,19 +269,46 @@ def chart_doge_data(data):
         pass
     return label__,data__
 
-def chart_tsla_data():
+def chart_stock_data(index):
     label__ = []
     data__ = []
-    try:
-        with open('/home/web/malinka/backend/data/stock/TSLA/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
-                csv_reader = csv.reader(csv_file, delimiter=',')
-                line_count = 0
-                for row in csv_reader:
-                    if line_count == 0:
-                        line_count += 1
-                    else:
-                        label__.append(row[1])
-                        data__.append(row[0])
-    except:
-        pass
+    if index.lower() == 'tsla':
+        try:
+            with open('/home/web/malinka/backend/data/stock/TSLA/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+                    csv_reader = csv.reader(csv_file, delimiter=',')
+                    line_count = 0
+                    for row in csv_reader:
+                        if line_count == 0:
+                            line_count += 1
+                        else:
+                            label__.append(row[1])
+                            data__.append(row[0])
+        except:
+            pass
+    elif index.lower()  == 'aapl':
+        try:
+            with open('/home/web/malinka/backend/data/stock/AAPL/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+                    csv_reader = csv.reader(csv_file, delimiter=',')
+                    line_count = 0
+                    for row in csv_reader:
+                        if line_count == 0:
+                            line_count += 1
+                        else:
+                            label__.append(row[1])
+                            data__.append(row[0])
+        except:
+            pass
+    elif index.lower()  == 'msft':
+        try:
+            with open('/home/web/malinka/backend/data/stock/MSFT/{}.csv'.format(date.today().strftime("%d.%m.%Y")),errors='ignore',encoding='utf-8') as csv_file:
+                    csv_reader = csv.reader(csv_file, delimiter=',')
+                    line_count = 0
+                    for row in csv_reader:
+                        if line_count == 0:
+                            line_count += 1
+                        else:
+                            label__.append(row[1])
+                            data__.append(row[0])
+        except:
+            pass
     return label__,data__
