@@ -3,6 +3,18 @@
         <p title>TSLA</p>
         <p content> {{ tslaValue }} </p>
     </app-panel>
+    <app-panel>
+        <p title>AAPL</p>
+        <p content> {{ aaplValue }} </p>
+    </app-panel>
+    <app-panel>
+        <p title>MSFT</p>
+        <p content> {{ msftValue }} </p>
+    </app-panel>
     <app-chart class="span-2 panel" style="padding: 10px" [data]="lineChartData" [labels]="lineChartLabels">
+    </app-chart>
+    <app-chart class="span-2 panel" style="padding: 10px" [data]="lineChartDataAAPL" [labels]="lineChartLabelsAAPL">
+    </app-chart>
+    <app-chart class="span-2 panel" style="padding: 10px" [data]="lineChartDataMSFT" [labels]="lineChartLabelsMSFT">
     </app-chart>
 </div>

@@ -13,6 +13,7 @@ import { CurrencyComponent } from './currency/currency.component';
 import { StockComponent } from './stock/stock.component';
 import { StatusComponent } from './status/status.component';
 import { ToolsComponent } from './tools/tools.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { ChartsModule } from 'ng2-charts';
 import { ChartComponent } from './chart/chart.component';
@@ -30,7 +31,13 @@ import { ChartComponent } from './chart/chart.component';
     ToolsComponent,
     ChartComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ChartsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ChartsModule,
+    MatProgressBarModule,
+  ],
   providers: [Title],
   bootstrap: [AppComponent],
 })

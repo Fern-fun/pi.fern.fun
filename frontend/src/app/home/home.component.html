@@ -21,6 +21,11 @@
         <p title>Disk</p>
         <p content> {{ diskUsage }} </p>
     </app-panel>
+    <app-panel class="span-2v panel">
+        <p title>Year progress bar</p>
+        <mat-progress-bar content value="{{ yearProgress }}" mode="determinate" color="accent">
+        </mat-progress-bar>
+    </app-panel>
     <app-chart class="span-2 panel" [data]="lineChartDataRAM" [labels]="lineChartLabelsRAM" style="padding: 10px">
     </app-chart>
     <app-chart class="span-2 panel" [data]="lineChartDataCPU" [labels]="lineChartLabelsCPU" style="padding: 10px">

@@ -15,16 +15,19 @@ export class HomeComponent implements OnInit {
   Data: any = [];
   DataRAM: any = [];
   DataCPU: any = [];
+  YearData: any = [];
   versionNumber: any = 'Loading...';
   cpuTemp: any = 'Loading...';
   cpuUsage: any = 'Loading...';
   memUsage: any = 'Loading...';
   diskUsage: any = 'Loading...';
+  yearProgress: number = 0;
 
   private url1: string = 'http://fern.myftp.org:8000/home/';
   private url2: string = 'http://fern.myftp.org:8000/chart/ram/';
   private url3: string = 'http://fern.myftp.org:8000/chart/cpu/usage/';
   private url4: string = 'http://fern.myftp.org:8000/chart/cpu/temp/';
+  private url5: string = 'http://fern.myftp.org:8000/year%20progress%20bar/';
 
   // -------------------------------------------------------------
   lineChartDataRAM: ChartDataSets[] = [{ data: [], label: 'RAM usage' }];
@@ -49,6 +52,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.ConnectApi(this.url1);
     this.ConnectApi2(this.url2, this.url3, this.url4);
+    this.ConnectApi3(this.url5);
   }
   ConnectApi(url: string) {
     this.http.get(url).subscribe((resp) => {
@@ -122,6 +126,20 @@ export class HomeComponent implements OnInit {
       this.lineChartDataTemp = [
         { data: this.DataCPU[1].value, label: 'CPU Temperature' },
       ];
+    });
+  }
+  ConnectApi3(url: string) {
+    this.http.get(url).subscribe((resp) => {
+      for (let key in resp) {
+        if (resp.hasOwnProperty(key)) {
+          this.YearData = Object.entries(resp).map(([parameter, value]) => ({
+            parameter,
+            value,
+          }));
+        }
+      }
+      this.yearProgress = this.YearData[1].value.replace('%', '');
+      // console.log(this.YearData[1].value);
     });
   }
 }

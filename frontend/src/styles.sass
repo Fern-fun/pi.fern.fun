@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap')
 *
     padding: 0
     margin: 0
@@ -24,6 +25,8 @@ footer
 .span-2
     grid-column-end: span 2
     grid-row-end: span 2
+.span-2v
+    grid-column-end: span 2
 .panel
     display: inline-flex
     border-radius: 20px
@@ -123,3 +126,16 @@ nav
         display: block !important
         line-height: 48px
         padding-left: 0.5em
+mat-progress-bar
+    margin: 0 auto
+    // border: 1px solid red
+    text-align: left
+    border-radius: 2px
+    height: 20px !important
+.mat-progress-bar-fill
+    background-color: white
+.mat-progress-bar-buffer
+    background-color: darken(white, 40%)
+    opacity: .5
+.mat-progress-bar-background
+    display: none

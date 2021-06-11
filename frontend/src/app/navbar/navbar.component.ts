@@ -14,7 +14,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   setDocTitle(title: string) {
-    console.log('current title: ' + this.titleService.getTitle());
+    // console.log('current title: ' + this.titleService.getTitle());
     this.titleService.setTitle(title);
+    const element = <HTMLInputElement>document.getElementById('hamburger');
+    element.checked = false;
   }
 }
