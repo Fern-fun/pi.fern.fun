@@ -1,0 +1,104 @@
+nav {
+  z-index: 3;
+}
+
+@media (max-width: 520px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .hamburger {
+    font-size: 2rem;
+    width: 1.5em;
+    height: 1.5em;
+    position: fixed;
+    top: 0;
+    right: 0.5em;
+    z-index: 2;
+  }
+  .hamburger .line {
+    width: 1.2em;
+    height: 0.16em;
+    background-color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.1em;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger .line::before,
+  .hamburger .line::after {
+    content: " ";
+    background-color: white;
+    position: absolute;
+    width: 1.2em;
+    height: 0.16em;
+    border-radius: 0.1em;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger .line::before {
+    top: 0.32em;
+  }
+  .hamburger .line::after {
+    top: -0.32em;
+  }
+  input[type="checkbox"]:checked + label .line {
+    background: transparent;
+  }
+  input[type="checkbox"]:checked + label .line::before,
+  input[type="checkbox"]:checked + label .line::after {
+    top: 0;
+  }
+  input[type="checkbox"]:checked + label .line::before {
+    transform: rotate(45deg);
+  }
+  input[type="checkbox"]:checked + label .line::after {
+    transform: rotate(-45deg);
+  }
+  input[type="checkbox"]:checked ~ ul#menu {
+    display: block;
+  }
+  nav > ul#menu {
+    display: none;
+    font-size: 1.3rem;
+  }
+  nav > ul#menu li > a {
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  #Menu {
+    display: block !important;
+    line-height: 48px;
+    padding-left: 0.5em;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+li {
+  display: flex;
+}
+
+.navText {
+  display: block;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  color: white;
+}
+.navText:hover {
+  background-color: #26012e;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #3e0748;
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
+}

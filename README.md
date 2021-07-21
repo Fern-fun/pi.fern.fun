@@ -1,98 +1,70 @@
-<p align="center">
- <a href=""><img width=220px height=200px src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" alt="Project logo"></a>
-</p>
+# Getting Started with Create React App
 
-<h3 align="center">Fern.fun Server</h3>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<div align="center">
+## Available Scripts
 
-[![GitHub Issues](https://img.shields.io/github/issues/fern-fun/Fern.fun-Server.svg)](https://github.com/fern-fun/fern.fun/issues)
-[![License](https://img.shields.io/github/license/fern-fun/Fern.fun-Server.svg)](/LICENSE)
+In the project directory, you can run:
 
-</div>
+### `npm start`
 
-## 📝 Table of Contents
-<!-- -  -->
-<!-- - [Deployment](#deployment) -->
-<!-- - [Usage](#usage) -->
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Built Using](#built_using)
-- [Authors](#authors)
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## 🧐 About <a name = "about"></a>
-Our RaspberryPI takes care of collecting various data connected to: current versions of a range of different apps, current currency data and usage data about itself, e.g. RAM usage, CPU temperature and usage. Now we mostly use it as a tool to test a spectrum of different libraries, tools and apps.
+### `npm test`
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+### `npm run build`
 
-### Prerequisites <a name = "prerequisites"></a>
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-* [Python](https://www.python.org)
-* [Node.js](https://nodejs.org/en/)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Installing
+### `npm run eject`
 
-A step by step series of examples that tell you how to get a development env running.
-```bash
-    git clone https://github.com/Fern-fun/Fern.fun-Server
-```
-```bash
-    cd backend/ 
-    pip install -r req.txt
-```
-```bash
-    cd frontend/
-    npm install
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-<!-- End with an example of getting some data out of the system or using it for a little demo. -->
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-<!-- ## 🔧 Running the tests <a name = "tests"></a>
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Explain how to run the automated tests for this system.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### Break down into end to end tests
+## Learn More
 
-Explain what these tests test and why
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```
-Give an example
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### And coding style tests
+### Code Splitting
 
-Explain what these tests test and why
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-```
-Give an example
-``` -->
+### Analyzing the Bundle Size
 
-<!-- ## 🎈 Usage <a name="usage"></a>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Add notes about how to use the system.
+### Making a Progressive Web App
 
-## 🚀 Deployment <a name = "deployment"></a>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Add additional notes about how to deploy this on a live system. -->
+### Advanced Configuration
 
-## ⛏️ Built Using <a name = "built_using"></a>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-- [Django](https://www.djangoproject.com) 
-- [Angular](https://angular.io) 
+### Deployment
 
-## ✍️ Authors <a name = "authors"></a>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-- [@MrJacob12](https://github.com/mrjacob12) - Idea & Backend
-- [@Shaking-Donut](https://github.com/shaking-donut) - Frontend
+### `npm run build` fails to minify
 
-See also the list of [contributors](https://github.com/fern-fun/Fern.fun-Server/contributors) who participated in this project.
-
-<!-- ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References -->
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
