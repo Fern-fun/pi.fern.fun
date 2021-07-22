@@ -6,11 +6,49 @@ function GamesCarousel(props) {
 
   const metascoreColor = (metascore) => {
     if (metascore < 50 && metascore > 0) {
-      return "red";
+      return (
+        <h2
+          className="carouselScore"
+          style={{
+            backgroundColor: "red",
+          }}
+        >
+          {metascore}
+        </h2>
+      );
     } else if (metascore > 50 && metascore < 75) {
-      return "#fc3";
+      return (
+        <h2
+          className="carouselScore"
+          style={{
+            backgroundColor: "#fc3",
+          }}
+        >
+          {metascore}
+        </h2>
+      );
     } else if (metascore > 75) {
-      return "#6c3";
+      return (
+        <h2
+          className="carouselScore"
+          style={{
+            backgroundColor: "#6c3",
+          }}
+        >
+          {metascore}
+        </h2>
+      );
+    } else if (metascore !== undefined) {
+      return (
+        <h2
+          className="carouselScore"
+          style={{
+            backgroundColor: "rgba(0,0,0, 0.4)",
+          }}
+        >
+          {metascore}
+        </h2>
+      );
     }
   };
 
@@ -21,6 +59,7 @@ function GamesCarousel(props) {
           <div className="carouselCell">
             <a
               target="_blank"
+              rel="noreferrer"
               href={item.url}
               style={{ transform: "transplateX(0px)", width: "200px" }}
             >
@@ -30,15 +69,12 @@ function GamesCarousel(props) {
                 alt={item.title}
                 key={item.title}
               />
-              <h1 className="carouselTitle">{item.title}</h1>
-              <h2
-                className="carouselScore"
-                style={{
-                  backgroundColor: metascoreColor(item.metascore),
-                }}
-              >
-                {item.metascore ? item.metascore : item.releaseDate}
-              </h2>
+              <div className="carouselItem">
+                <h1 className="carouselTitle">{item.title}</h1>
+                {metascoreColor(
+                  item.metascore ? item.metascore : item.releaseDate
+                )}
+              </div>
             </a>
           </div>
         ))}
