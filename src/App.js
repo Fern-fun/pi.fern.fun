@@ -8,6 +8,7 @@ import Stock from "./pages/Stock";
 import Navbar from "./components/Navbar/Navbar";
 import Status from "./pages/Status";
 import Games from "./pages/Games";
+import Footer from "./components/Navbar/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/games" exact component={Games} />
           </Switch>
         </Router>
+        <Footer />
       </div>
     </div>
   );

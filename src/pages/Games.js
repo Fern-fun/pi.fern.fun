@@ -1,22 +1,36 @@
 import { React, useState, useEffect } from "react";
 import PanelLogo from "../components/UI/PanelLogo";
+import GamesCarousel from "../components/UI/Games/GamesCarousel";
 
 function Games() {
-  const [gamesList, setGameList] = useState([]);
+  const [gamesListFreeToPlay, setGameListFreeToPlay] = useState([]);
+  const [gamesListUpcomingGames, setGameListUpcomingGames] = useState([]);
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/games/free to play/")
+    fetch("https://fern.myftp.org:8000/games/free%20to%20play/")
       .then((res) => res.json())
       .then((data) => {
-        setGameList(data);
+        setGameListFreeToPlay(data);
+      });
+
+    fetch("https://fern.myftp.org:8000/games/upcoming%20games/")
+      .then((res) => res.json())
+      .then((data) => {
+        setGameListUpcomingGames(data);
       });
   }, []);
   return (
     <div>
       <PanelLogo />
-      <div style={{ display: "flex", margin: "15px" }}>
-        {gamesList.map((item) => (
-          <img src={item.image} alt={item.title} key={item.title} />
-        ))}
+      <div style={{ display: "block", margin: "15px" }}>
+        <GamesCarousel
+          listImg={gamesListFreeToPlay}
+          title="Free to play games"
+        />
+        <p></p>
+        <GamesCarousel
+          listImg={gamesListUpcomingGames}
+          title="Upcoming games"
+        />
       </div>
     </div>
   );
