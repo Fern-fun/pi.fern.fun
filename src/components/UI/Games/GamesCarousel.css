@@ -1,14 +1,16 @@
 .carouselPanel {
+  position: relative;
   display: flexbox;
   margin: auto;
   margin-bottom: 25px;
   border-radius: 20px;
 
-  overflow: auto;
+  overflow: hidden;
   background-color: #3e0748;
 
   width: 95%;
   max-height: 385px;
+  padding-left: 10px;
 }
 
 .carouselPanel h1 {
@@ -20,9 +22,9 @@
 }
 
 .carouselCell {
+  transition: transform 0.6s;
   border-radius: 7px;
   position: relative;
-  margin-left: 10px;
 }
 
 .carouselImage {
@@ -36,8 +38,8 @@
 
 .carouselTitle {
   position: absolute;
-  top: 91%;
-  left: 50%;
+  top: 87%;
+  left: 47%;
 
   transform: translate(-50%, -50%);
   width: 100%;
@@ -67,4 +69,43 @@
   width: 365px;
   height: 205px;
   overflow: hidden;
+}
+
+.leftArrow {
+  z-index: 3;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 5px;
+
+  cursor: pointer;
+  filter: invert();
+  transition: filter 0.3s;
+}
+
+.leftArrow:hover {
+  filter: none;
+}
+.rightArrow {
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 5px;
+
+  cursor: pointer;
+  filter: invert();
+  transition: filter 0.3s;
+}
+
+.rightArrow:hover {
+  filter: none;
 }

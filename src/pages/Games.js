@@ -24,11 +24,13 @@ function Games() {
       <div style={{ display: "block", margin: "15px" }}>
         <GamesCarousel
           listImg={gamesListFreeToPlay}
+          itemAmount={gamesListFreeToPlay.length}
           title="Free to play games"
         />
         <p></p>
         <GamesCarousel
           listImg={gamesListUpcomingGames}
+          itemAmount={gamesListUpcomingGames.length}
           title="Upcoming games"
         />
       </div>

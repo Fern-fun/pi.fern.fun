@@ -1,8 +1,11 @@
-import React from "react";
+import { React, useState } from "react";
 import "./GamesCarousel.css";
 
 function GamesCarousel(props) {
-  const { listImg, title } = props;
+  const scrollPower = 395 * 2;
+  const { listImg, title, itemAmount } = props;
+  const [carouselGo, setCarouselGo] = useState({});
+  const [carouselGoAmount, setCarouselGoAmount] = useState(0);
 
   const metascoreColor = (metascore) => {
     if (metascore < 50 && metascore > 0) {
@@ -52,12 +55,39 @@ function GamesCarousel(props) {
     }
   };
 
+  const carouselRightHandler = () => {
+    if (-(395 * itemAmount) < carouselGoAmount) {
+      setCarouselGoAmount(carouselGoAmount - scrollPower);
+      const right =
+        "translateX(" + (carouselGoAmount - scrollPower).toString() + "px)";
+      setCarouselGo({ transform: right });
+      console.log(carouselGo);
+    }
+  };
+
+  const carouselLeftHandler = () => {
+    if (carouselGoAmount !== 0) {
+      setCarouselGoAmount(carouselGoAmount + scrollPower);
+      const left =
+        "translateX(" + (carouselGoAmount + scrollPower).toString() + "px)";
+      setCarouselGo({ transform: left });
+      console.log(carouselGo);
+    }
+  };
   return (
     <div className="carouselPanel">
       <h1 className="title">{title}</h1>
+      <span onClick={carouselLeftHandler} class="material-icons leftArrow">
+        navigate_before
+      </span>
+
+      <span onClick={carouselRightHandler} class="material-icons rightArrow">
+        keyboard_arrow_right
+      </span>
+
       <div className="carousel">
         {listImg.map((item) => (
-          <div className="carouselCell">
+          <div className="carouselCell" style={carouselGo}>
             <a
               target="_blank"
               rel="noreferrer"
