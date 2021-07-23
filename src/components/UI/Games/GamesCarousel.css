@@ -1,5 +1,5 @@
 .carouselPanel {
-  display: flex;
+  display: flexbox;
   margin: auto;
   margin-bottom: 25px;
   border-radius: 20px;
@@ -9,6 +9,10 @@
 
   width: 95%;
   max-height: 385px;
+}
+
+.carouselPanel h1 {
+  margin: 10px;
 }
 
 .carousel {

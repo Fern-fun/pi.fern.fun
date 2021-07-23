@@ -2,7 +2,7 @@ import React from "react";
 import "./GamesCarousel.css";
 
 function GamesCarousel(props) {
-  const { listImg } = props;
+  const { listImg, title } = props;
 
   const metascoreColor = (metascore) => {
     if (metascore < 50 && metascore > 0) {
@@ -54,6 +54,7 @@ function GamesCarousel(props) {
 
   return (
     <div className="carouselPanel">
+      <h1 className="title">{title}</h1>
       <div className="carousel">
         {listImg.map((item) => (
           <div className="carouselCell">

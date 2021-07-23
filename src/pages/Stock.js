@@ -78,9 +78,21 @@ export default function Stock() {
           />
         </PanelElementText>
 
-        <PanelChart data={chartTslaData} label={chartTslaLabel} title="" />
-        <PanelChart data={chartAaplData} label={chartAaplLabel} title="" />
-        <PanelChart data={chartMsftData} label={chartMsftLabel} title="" />
+        <PanelChart
+          data={chartTslaData}
+          label={chartTslaLabel}
+          title="[$] TSLA"
+        />
+        <PanelChart
+          data={chartAaplData}
+          label={chartAaplLabel}
+          title="[$] AAPL"
+        />
+        <PanelChart
+          data={chartMsftData}
+          label={chartMsftLabel}
+          title="[$] MSFT"
+        />
       </PanelGrid>
     </div>
   );
