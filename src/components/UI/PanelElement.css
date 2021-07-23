@@ -6,7 +6,9 @@
   height: 100%;
   background-color: #3e0748;
 }
-
+a {
+  text-decoration: none;
+}
 .info {
   width: 100%;
   margin: 15px;

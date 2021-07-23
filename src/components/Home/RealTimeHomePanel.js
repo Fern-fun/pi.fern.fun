@@ -25,7 +25,13 @@ function RealTimeHomePanel() {
   }, []);
   return (
     <>
-      <PanelElementText title="Version" content={version} />
+      <a
+        href="https://github.com/Fern-fun/Fern.fun-Server"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <PanelElementText title="Version" content={version} />
+      </a>
       <PanelElementText title="CPU Temperature" content={temp} />
       <PanelElementText title="CPU usage" content={cpuUsage} />
       <PanelElementText title="Memory Usage" content={memory} />
