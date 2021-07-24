@@ -4,8 +4,9 @@ import { isMobile } from "react-device-detect";
 
 function GamesCarousel(props) {
   let scrollPower;
+
   if (isMobile) {
-    scrollPower = 395 * 2;
+    scrollPower = 395;
   } else {
     scrollPower = 395 * 2;
   }
@@ -70,7 +71,6 @@ function GamesCarousel(props) {
       const right =
         "translateX(" + (carouselGoAmount - scrollPower).toString() + "px)";
       setCarouselGo({ transform: right });
-      console.log(carouselGo);
     }
   };
 
@@ -80,7 +80,6 @@ function GamesCarousel(props) {
       const left =
         "translateX(" + (carouselGoAmount + scrollPower).toString() + "px)";
       setCarouselGo({ transform: left });
-      console.log(carouselGo);
     }
   };
   return (
