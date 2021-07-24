@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import PanelLogo from "../components/UI/PanelLogo";
 import GamesCarousel from "../components/UI/Games/GamesCarousel";
+import { Helmet } from "react-helmet";
 
 function Games() {
   const [gamesListFreeToPlay, setGameListFreeToPlay] = useState([]);
@@ -20,6 +21,9 @@ function Games() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>{"Games - Panel"}</title>
+      </Helmet>
       <PanelLogo />
       <div style={{ display: "block", margin: "15px" }}>
         <GamesCarousel

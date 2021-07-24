@@ -3,6 +3,7 @@ import PanelGrid from "../components/UI/PanelGrid";
 import PanelChart from "../components/UI/PanelChart";
 import PanelElementText from "../components/UI/PanelElementText";
 import PanelLogo from "../components/UI/PanelLogo";
+import { Helmet } from "react-helmet";
 
 export default function Stock() {
   const [tsla, setTsla] = useState("Loading...");
@@ -54,6 +55,9 @@ export default function Stock() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>{"Stock - Panel"}</title>
+      </Helmet>
       <PanelLogo />
       <PanelGrid>
         <PanelElementText title="TSLA" content={tsla}>

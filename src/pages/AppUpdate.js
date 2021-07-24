@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import PanelGrid from "../components/UI/PanelGrid";
 import PanelElementText from "../components/UI/PanelElementText";
 import PanelLogo from "../components/UI/PanelLogo";
+import { Helmet } from "react-helmet";
 
 function AppUpdate() {
   const [macOS, setmacOS] = useState("Loading...");
@@ -20,6 +21,9 @@ function AppUpdate() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>{"App update - Panel"}</title>
+      </Helmet>
       <PanelLogo />
       <PanelGrid>
         <PanelElementText title="macOS" content={macOS} />

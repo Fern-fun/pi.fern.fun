@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import PanelGrid from "../components/UI/PanelGrid";
 import PanelElementText from "../components/UI/PanelElementText";
 import PanelLogo from "../components/UI/PanelLogo";
+import { Helmet } from "react-helmet";
 
 function Status() {
   const [discord, setDiscord] = useState("Loading...");
@@ -12,30 +13,35 @@ function Status() {
     fetch("https://fern.myftp.org:8000/status/")
       .then((res) => res.json())
       .then((data) => {
-        if (data["discord"] !== "Inactive") {
-          setDiscord(true);
-        } else {
-          setDiscord(false);
-        }
-        if (data["data"] !== "Inactive") {
-          setData(true);
-        } else {
-          setData(false);
-        }
-        if (data["stock"] !== "Inactive") {
-          setStock(true);
-        } else {
-          setStock(false);
-        }
-        if (data["fern"] !== "Inactive") {
-          setFern(true);
-        } else {
-          setFern(false);
+        if (data !== {}) {
+          if (data["discord"] !== "Inactive") {
+            setDiscord(true);
+          } else {
+            setDiscord(false);
+          }
+          if (data["data"] !== "Inactive") {
+            setData(true);
+          } else {
+            setData(false);
+          }
+          if (data["stock"] !== "Inactive") {
+            setStock(true);
+          } else {
+            setStock(false);
+          }
+          if (data["fern"] !== "Inactive") {
+            setFern(true);
+          } else {
+            setFern(false);
+          }
         }
       });
   });
   return (
     <div>
+      <Helmet>
+        <title>{"Status - Panel"}</title>
+      </Helmet>
       <PanelLogo />
       <PanelGrid>
         <PanelElementText

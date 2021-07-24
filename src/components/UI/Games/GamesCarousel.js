@@ -1,11 +1,19 @@
 import { React, useState } from "react";
 import "./GamesCarousel.css";
+import { isMobile } from "react-device-detect";
 
 function GamesCarousel(props) {
-  const scrollPower = 395 * 2;
+  let scrollPower;
+  if (isMobile) {
+    scrollPower = 395 * 2;
+  } else {
+    scrollPower = 395 * 2;
+  }
+
   const { listImg, title, itemAmount } = props;
   const [carouselGo, setCarouselGo] = useState({});
   const [carouselGoAmount, setCarouselGoAmount] = useState(0);
+  const [leftArrowVisable, setLeftArrowVisable] = useState("hidden");
 
   const metascoreColor = (metascore) => {
     if (metascore < 50 && metascore > 0) {
@@ -57,6 +65,7 @@ function GamesCarousel(props) {
 
   const carouselRightHandler = () => {
     if (-(395 * itemAmount) < carouselGoAmount) {
+      setLeftArrowVisable("visible");
       setCarouselGoAmount(carouselGoAmount - scrollPower);
       const right =
         "translateX(" + (carouselGoAmount - scrollPower).toString() + "px)";
@@ -77,7 +86,11 @@ function GamesCarousel(props) {
   return (
     <div className="carouselPanel">
       <h1 className="title">{title}</h1>
-      <span onClick={carouselLeftHandler} class="material-icons leftArrow">
+      <span
+        onClick={carouselLeftHandler}
+        style={{ visibility: leftArrowVisable }}
+        class="material-icons leftArrow"
+      >
         navigate_before
       </span>
 

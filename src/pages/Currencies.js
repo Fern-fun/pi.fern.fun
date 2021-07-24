@@ -3,6 +3,7 @@ import PanelGrid from "../components/UI/PanelGrid";
 import PanelElementText from "../components/UI/PanelElementText";
 import PanelChart from "../components/UI/PanelChart";
 import PanelLogo from "../components/UI/PanelLogo";
+import { Helmet } from "react-helmet";
 
 function Currencies() {
   const [usd, setUsd] = useState("Loading...");
@@ -62,6 +63,9 @@ function Currencies() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>{"Currencies - Panel"}</title>
+      </Helmet>
       <PanelLogo />
       <PanelGrid>
         <PanelElementText title="USD to PLN" content={usd}>
