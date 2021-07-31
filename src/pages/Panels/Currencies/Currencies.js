@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from "react";
-import PanelGrid from "../components/UI/PanelGrid";
-import PanelElementText from "../components/UI/PanelElementText";
-import PanelChart from "../components/UI/PanelChart";
-import PanelLogo from "../components/UI/PanelLogo";
+import PanelGrid from "../../../components/UI/PanelGrid";
+import PanelElementText from "../../../components/UI/PanelElementText";
+import PanelChart from "../../../components/UI/PanelChart";
+import PanelLogo from "../../../components/UI/PanelLogo";
 import { Helmet } from "react-helmet";
 
 function Currencies() {

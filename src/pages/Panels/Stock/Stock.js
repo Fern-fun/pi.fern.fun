@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from "react";
-import PanelGrid from "../components/UI/PanelGrid";
-import PanelChart from "../components/UI/PanelChart";
-import PanelElementText from "../components/UI/PanelElementText";
-import PanelLogo from "../components/UI/PanelLogo";
+import PanelGrid from "../../../components/UI/PanelGrid";
+import PanelChart from "../../../components/UI/PanelChart";
+import PanelElementText from "../../../components/UI/PanelElementText";
+import PanelLogo from "../../../components/UI/PanelLogo";
 import { Helmet } from "react-helmet";
 
 export default function Stock() {
