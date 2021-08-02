@@ -1,17 +1,18 @@
 import { React, useState } from "react";
-import "./LoginForm.css";
+import "./RegisterForm.css";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
-import RegisterForm from "../RegisterForm/RegisterForm";
+import LoginForm from "../LoginForm/LoginForm";
 import { Helmet } from "react-helmet";
 
-function LoginForm() {
+function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassowrd] = useState("");
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState({ visibility: "hidden" });
 
-  /* <==============> LOGIN SYSTEM <==============>*/
-  const loginHandler = (event) => {
+  /* <==============> REGISTER SYSTEM <==============>*/
+  const registerHandler = (event) => {
     setLoading({ visibility: "visible" });
     event.preventDefault();
 
@@ -28,18 +29,16 @@ function LoginForm() {
       body: JSON.stringify({
         username: username,
         password: password,
+        email: email,
       }),
     };
 
-    // fetch("", reqOptions)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
-
-    console.log(reqOptions.body);
+    fetch("", reqOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
-
   /* <==============> USERNAME ON CHANGE SAVE <==============>*/
   const usernameHandler = (event) => {
     setUsername(event.target.value);
@@ -50,24 +49,23 @@ function LoginForm() {
     setPassowrd(event.target.value);
   };
 
-  /* <==============> REGISTER FORM ON <==============>*/
-  const [clickRegister, setClickRegister] = useState(false);
-
-  const registerToogleHandler = () => {
-    setClickRegister(true);
+  /* <==============> EMAIL ON CHANGE SAVE<==============>*/
+  const emailHandler = (event) => {
+    setEmail(event.target.value);
   };
-  return clickRegister ? (
+
+  /* <==============> LOGIN FORM ON <==============>*/
+  const [loginTo, setLoginTo] = useState(false);
+  const loginToogleHandler = () => {
+    setLoginTo(true);
+  };
+
+  return loginTo ? (
     <div>
-      <Helmet>
-        <title>{"Account - Sign Up"}</title>
-      </Helmet>
-      <RegisterForm />
+      <LoginForm />
     </div>
   ) : (
     <div className="loginFormPanel">
-      <Helmet>
-        <title>{"Account - Sign In"}</title>
-      </Helmet>
       <div className="loginFormPanelForm">
         <div className="loginFormPanelFormSpinner" style={loading}>
           <ClipLoader
@@ -81,12 +79,20 @@ function LoginForm() {
           />
         </div>
         <form>
-          <span className="labelTitle">Sing In</span>
+          <span className="labelTitle">Sing Up</span>
           <label>Username: </label>
           <input
             type="text"
             name="username"
             onChange={usernameHandler}
+            className=""
+            require
+          />
+          <label>Email: </label>
+          <input
+            type="email"
+            onChange={emailHandler}
+            name="email"
             className=""
             require
           />
@@ -98,10 +104,9 @@ function LoginForm() {
             className=""
             require
           />
-
-          <input type="submit" onClick={loginHandler} />
-          <span className="link" onClick={registerToogleHandler}>
-            Don't have any account?
+          <input type="submit" onClick={registerHandler} />
+          <span className="link" onClick={loginToogleHandler}>
+            Have any account?
           </span>
         </form>
       </div>
@@ -109,4 +114,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

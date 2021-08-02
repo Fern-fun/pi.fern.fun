@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import LoginForm from "../../components/AccountUI/LoginForm";
+import LoginForm from "../../components/AccountUI/LoginForm/LoginForm";
 
 function Account() {
   const [logged, setLogged] = useState(false);
