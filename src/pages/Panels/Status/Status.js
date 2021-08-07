@@ -10,7 +10,7 @@ function Status() {
   const [stock, setStock] = useState("Loading...");
   const [fern, setFern] = useState("Loading...");
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/status/")
+    fetch("https://fern.fun:8000/status/")
       .then((res) => res.json())
       .then((data) => {
         if (data !== {}) {

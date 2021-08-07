@@ -16,19 +16,19 @@ function Home() {
   const [cpuUsageLabel, setCpuUsageLabel] = useState([]);
 
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/chart/ram/")
+    fetch("https://fern.fun:8000/chart/ram/")
       .then((res) => res.json())
       .then((data) => {
         setRamData(data["data"]);
         setRamLabel(data["label"]);
       });
-    fetch("https://fern.myftp.org:8000/chart/cpu/temp/")
+    fetch("https://fern.fun:8000/chart/cpu/temp/")
       .then((res) => res.json())
       .then((data) => {
         setCpuTempData(data["data"]);
         setCpuTempLabel(data["label"]);
       });
-    fetch("https://fern.myftp.org:8000/chart/cpu/usage/")
+    fetch("https://fern.fun:8000/chart/cpu/usage/")
       .then((res) => res.json())
       .then((data) => {
         setCpuUsageData(data["data"]);

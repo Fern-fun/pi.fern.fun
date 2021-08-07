@@ -10,7 +10,7 @@ function AppUpdate() {
   const [factorio, setFactorio] = useState("Loading...");
   const [lol, setLol] = useState("Loading...");
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/appupdate/")
+    fetch("https://fern.fun:8000/appupdate/")
       .then((res) => res.json())
       .then((data) => {
         setmacOS(data["macOS"]);

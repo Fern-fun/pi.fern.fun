@@ -22,7 +22,7 @@ function Currencies() {
   const [chartDogeLabel, setChartDogeLabel] = useState([]);
 
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/currency/pln/")
+    fetch("https://fern.fun:8000/currency/pln/")
       .then((res) => res.json())
       .then((data) => {
         setUsd(data["usd"] + " zł");
@@ -36,7 +36,7 @@ function Currencies() {
   }, []);
 
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/chart/btc/pln/")
+    fetch("https://fern.fun:8000/chart/btc/pln/")
       .then((res) => res.json())
       .then((data) => {
         setChartBtcData(data["data"]);
@@ -45,7 +45,7 @@ function Currencies() {
   }, []);
 
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/chart/eth/pln/")
+    fetch("https://fern.fun:8000/chart/eth/pln/")
       .then((res) => res.json())
       .then((data) => {
         setChartEthData(data["data"]);
@@ -54,7 +54,7 @@ function Currencies() {
   }, []);
 
   useEffect(() => {
-    fetch("https://fern.myftp.org:8000/chart/doge/pln/")
+    fetch("https://fern.fun:8000/chart/doge/pln/")
       .then((res) => res.json())
       .then((data) => {
         setChartDogeData(data["data"]);

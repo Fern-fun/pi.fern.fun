@@ -10,7 +10,7 @@ function RealTimeHomePanel() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch("https://fern.myftp.org:8000/home/")
+      fetch("https://fern.fun:8000/home/")
         .then((res) => res.json())
         .then((data) => {
           setVersion(data["version"]);
