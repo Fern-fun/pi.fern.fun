@@ -52,11 +52,6 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link onClick={hideHamHandler} className="navText" to="/status">
-            Status
-          </Link>
-        </li>
-        <li>
           <Link onClick={hideHamHandler} className="navText" to="/games">
             Games
           </Link>

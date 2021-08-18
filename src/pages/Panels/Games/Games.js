@@ -7,13 +7,13 @@ function Games() {
   const [gamesListFreeToPlay, setGameListFreeToPlay] = useState([]);
   const [gamesListUpcomingGames, setGameListUpcomingGames] = useState([]);
   useEffect(() => {
-    fetch("https://fern.fun:8000/games/free%20to%20play/")
+    fetch("https://api.fern.fun/pi/games/free%20to%20play/")
       .then((res) => res.json())
       .then((data) => {
         setGameListFreeToPlay(data);
       });
 
-    fetch("https://fern.fun:8000/games/upcoming%20games/")
+    fetch("https://api.fern.fun/pi/games/free%20to%20play/")
       .then((res) => res.json())
       .then((data) => {
         setGameListUpcomingGames(data);

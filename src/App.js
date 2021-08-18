@@ -6,7 +6,6 @@ import AppUpdate from "./pages/Panels/AppUpdate/AppUpdate";
 import Currencies from "./pages/Panels/Currencies/Currencies";
 import Stock from "./pages/Panels/Stock/Stock";
 import Navbar from "./components/Navbar/Navbar";
-import Status from "./pages/Panels/Status/Status";
 import Games from "./pages/Panels/Games/Games";
 import Footer from "./components/Navbar/Footer";
 
@@ -24,7 +23,6 @@ function App() {
             <Route path="/appUpdate" exact component={AppUpdate} />
             <Route path="/currencies" exact component={Currencies} />
             <Route path="/stock" exact component={Stock} />
-            <Route path="/status" exact component={Status} />
             <Route path="/games" exact component={Games} />
 
             {/* <===============> Account <===============>*/}

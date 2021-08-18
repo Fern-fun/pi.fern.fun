@@ -18,7 +18,7 @@ export default function Stock() {
   const [chartMsftLabel, setChartMsftLabel] = useState([]);
 
   useEffect(() => {
-    fetch("https://fern.fun:8000/stock/")
+    fetch("https://api.fern.fun/pi/stock/")
       .then((res) => res.json())
       .then((data) => {
         setTsla(data["tsla"]);
@@ -28,7 +28,7 @@ export default function Stock() {
   }, []);
 
   useEffect(() => {
-    fetch("https://fern.fun:8000/chart/stock/tsla/")
+    fetch("https://api.fern.fun/pi/stock/chart/tsla/")
       .then((res) => res.json())
       .then((data) => {
         setChartTslaData(data["data"]);
@@ -37,7 +37,7 @@ export default function Stock() {
   }, []);
 
   useEffect(() => {
-    fetch("https://fern.fun:8000/chart/stock/aapl/")
+    fetch("https://api.fern.fun/pi/stock/chart/aapl/")
       .then((res) => res.json())
       .then((data) => {
         setChartAaplData(data["data"]);
@@ -46,7 +46,7 @@ export default function Stock() {
   }, []);
 
   useEffect(() => {
-    fetch("https://fern.fun:8000/chart/stock/msft/")
+    fetch("https://api.fern.fun/pi/stock/chart/msft/")
       .then((res) => res.json())
       .then((data) => {
         setChartMsftData(data["data"]);
