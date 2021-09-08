@@ -25,13 +25,13 @@ function Currencies() {
     fetch("https://api.fern.fun/pi/currencies/crypto/")
       .then((res) => res.json())
       .then((data) => {
-        setUsd(data["usd"] + " zł");
-        setEur(data["eur"] + " zł");
-        setGbp(data["gbp"] + " zł");
-        setBtc(data["btc"] + " zł");
-        setEth(data["eth"] + " zł");
-        setDoge(data["doge"] + " zł");
-        setShib(data["shib"] + " zł");
+        setUsd(data["usd"]);
+        setEur(data["eur"]);
+        setGbp(data["gbp"]);
+        setBtc(data["btc"]);
+        setEth(data["eth"]);
+        setDoge(data["doge"]);
+        setShib(data["shib"]);
       });
   }, []);
 
@@ -39,8 +39,7 @@ function Currencies() {
     fetch("https://api.fern.fun/pi/currencies/chart/btc/")
       .then((res) => res.json())
       .then((data) => {
-        setChartBtcData(data["data"]);
-        setChartBtcLabel(data["label"]);
+        setChartBtcData(data);
       });
   }, []);
 
@@ -48,8 +47,7 @@ function Currencies() {
     fetch("https://api.fern.fun/pi/currencies/chart/eth/")
       .then((res) => res.json())
       .then((data) => {
-        setChartEthData(data["data"]);
-        setChartEthLabel(data["label"]);
+        setChartEthData(data);
       });
   }, []);
 
@@ -57,8 +55,7 @@ function Currencies() {
     fetch("https://api.fern.fun/pi/currencies/chart/doge/")
       .then((res) => res.json())
       .then((data) => {
-        setChartDogeData(data["data"]);
-        setChartDogeLabel(data["label"]);
+        setChartDogeData(data);
       });
   }, []);
   return (
@@ -68,71 +65,52 @@ function Currencies() {
       </Helmet>
       <PanelLogo />
       <PanelGrid>
-        <PanelElementText title="USD to PLN" content={usd}>
+        <PanelElementText title="USD to PLN" content={`${usd}zł`}>
           <img
             alt="USD"
             src="/images/usd.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="EUR to PLN" content={eur}>
+        <PanelElementText title="EUR to PLN" content={`${eur}zł`}>
           <img
             alt="EUR"
             src="/images/eur.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="GBP to PLN" content={gbp}>
+        <PanelElementText title="GBP to PLN" content={`${gbp}zł`}>
           <img
             alt="GBP"
             src="/images/gbp.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="BTC to PLN" content={btc}>
+        <PanelElementText title="BTC to PLN" content={`$${btc}`}>
           <img
             alt="BTC"
             src="/images/btc.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="ETH to PLN" content={eth}>
+        <PanelElementText title="ETH to PLN" content={`$${eth}`}>
           <img
             alt="ETH"
             src="/images/eth.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="DOGE to PLN" content={doge}>
+        <PanelElementText title="DOGE to PLN" content={`$${doge}`}>
           <img
             alt="DOGE"
             src="/images/doge.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="Shib to PLN" content={shib}>
-          <img
-            alt="Shib"
-            src="/images/shib.webp"
-            style={{ width: "32px", height: "32px" }}
-          />
-        </PanelElementText>
 
-        <PanelChart
-          data={chartBtcData}
-          label={chartBtcLabel}
-          title="[USD] BTC"
-        />
-        <PanelChart
-          data={chartEthData}
-          label={chartEthLabel}
-          title="[USD] ETH"
-        />
-        <PanelChart
-          data={chartDogeData}
-          label={chartDogeLabel}
-          title="[USD] DOGE"
-        />
+        <PanelChart data={chartBtcData} title="[USD] BTC" />
+        <PanelChart data={chartEthData} title="[USD] ETH" />
+        <PanelChart data={chartDogeData} title="[USD] DOGE" />
       </PanelGrid>
     </div>
   );

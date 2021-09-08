@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import "./PanelChart.css";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -6,12 +6,25 @@ import ClipLoader from "react-spinners/ClipLoader";
 function PanelChart(props) {
   const { label, data, title } = props;
 
+  const [dataChart, setDataChart] = useState([]);
+  const [labels, setLabels] = useState([]);
+
   let loading = false;
-  if (data.length === 0 && label.length === 0) {
-    loading = true;
-  } else {
-    loading = false;
-  }
+  useEffect(() => {
+    if (data != null || data != undefined) {
+      loading = false;
+      console.log(data);
+      data.map((item) => {
+        setDataChart((dataChart) => [...dataChart, item.value]);
+        setLabels((labels) => [
+          ...labels,
+          item.date_created.toString().split("T")[1].split(".")[0],
+        ]);
+      });
+    } else {
+      loading = true;
+    }
+  }, [data]);
 
   return (
     <div
@@ -27,14 +40,14 @@ function PanelChart(props) {
         width="100"
         height="100"
         data={{
-          labels: label,
+          labels: labels,
           datasets: [
             {
               label: title,
               fill: true,
               borderColor:
                 "#" + Math.floor(Math.random() * 16777215).toString(16),
-              data: data,
+              data: dataChart,
             },
           ],
         }}
