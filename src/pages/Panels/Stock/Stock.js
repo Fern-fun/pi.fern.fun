@@ -90,7 +90,7 @@ export default function Stock() {
               Microsoft<sub>MSFT</sub>
             </>
           }
-          content={msft}
+          content={"$" + msft}
         >
           <img
             alt="MSFT"
@@ -105,7 +105,7 @@ export default function Stock() {
               Alphabet<sub>GOOG</sub>
             </>
           }
-          content={goog}
+          content={"$" + goog}
         >
           <img
             alt="GOOG"
