@@ -12,3 +12,7 @@ body {
   min-height: 100vh;
   background: #150019;
 }
+
+sub {
+  font-size: 0.7rem;
+}

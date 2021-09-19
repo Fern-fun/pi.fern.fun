@@ -9,9 +9,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Games from "./pages/Panels/Games/Games";
 import Footer from "./components/Navbar/Footer";
 
-/* <===============> Account <===============> */
-import Account from "./pages/Account/Account";
-
 function App() {
   return (
     <div>
@@ -24,9 +21,6 @@ function App() {
             <Route path="/currencies" exact component={Currencies} />
             <Route path="/stock" exact component={Stock} />
             <Route path="/games" exact component={Games} />
-
-            {/* <===============> Account <===============>*/}
-            <Route path="/account" exact component={Account} />
           </Switch>
         </Router>
         <Footer />

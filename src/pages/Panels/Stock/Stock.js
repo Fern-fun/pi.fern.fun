@@ -9,13 +9,11 @@ export default function Stock() {
   const [tsla, setTsla] = useState("Loading...");
   const [aapl, setAapl] = useState("Loading...");
   const [msft, setMsft] = useState("Loading...");
+  const [goog, setGoog] = useState("Loading...");
 
   const [chartTslaData, setChartTslaData] = useState([]);
-  const [chartTslaLabel, setChartTslaLabel] = useState([]);
   const [chartAaplData, setChartAaplData] = useState([]);
-  const [chartAaplLabel, setChartAaplLabel] = useState([]);
   const [chartMsftData, setChartMsftData] = useState([]);
-  const [chartMsftLabel, setChartMsftLabel] = useState([]);
 
   useEffect(() => {
     fetch("https://api.fern.fun/pi/stock/")
@@ -24,6 +22,7 @@ export default function Stock() {
         setTsla(data["tsla"]);
         setAapl(data["aapl"]);
         setMsft(data["msft"]);
+        setGoog(data["goog"]);
       });
   }, []);
 
@@ -31,8 +30,7 @@ export default function Stock() {
     fetch("https://api.fern.fun/pi/stock/chart/tsla/")
       .then((res) => res.json())
       .then((data) => {
-        setChartTslaData(data["data"]);
-        setChartTslaLabel(data["label"]);
+        setChartTslaData(data);
       });
   }, []);
 
@@ -40,8 +38,7 @@ export default function Stock() {
     fetch("https://api.fern.fun/pi/stock/chart/aapl/")
       .then((res) => res.json())
       .then((data) => {
-        setChartAaplData(data["data"]);
-        setChartAaplLabel(data["label"]);
+        setChartAaplData(data);
       });
   }, []);
 
@@ -49,8 +46,7 @@ export default function Stock() {
     fetch("https://api.fern.fun/pi/stock/chart/msft/")
       .then((res) => res.json())
       .then((data) => {
-        setChartMsftData(data["data"]);
-        setChartMsftLabel(data["label"]);
+        setChartMsftData(data);
       });
   }, []);
   return (
@@ -60,21 +56,42 @@ export default function Stock() {
       </Helmet>
       <PanelLogo />
       <PanelGrid>
-        <PanelElementText title="TSLA" content={tsla}>
+        <PanelElementText
+          title={
+            <>
+              Tesla<sub>TSLA</sub>
+            </>
+          }
+          content={"$" + tsla}
+        >
           <img
             alt="TSLA"
             src="/images/tsla.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="AAPL" content={aapl}>
+        <PanelElementText
+          title={
+            <>
+              Apple<sub>AAPL</sub>
+            </>
+          }
+          content={"$" + aapl}
+        >
           <img
             alt="AAPL"
             src="/images/aapl.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="MSFT" content={msft}>
+        <PanelElementText
+          title={
+            <>
+              Microsoft<sub>MSFT</sub>
+            </>
+          }
+          content={msft}
+        >
           <img
             alt="MSFT"
             src="/images/msft.webp"
@@ -82,21 +99,20 @@ export default function Stock() {
           />
         </PanelElementText>
 
-        <PanelChart
-          data={chartTslaData}
-          label={chartTslaLabel}
-          title="[$] TSLA"
-        />
-        <PanelChart
-          data={chartAaplData}
-          label={chartAaplLabel}
-          title="[$] AAPL"
-        />
-        <PanelChart
-          data={chartMsftData}
-          label={chartMsftLabel}
-          title="[$] MSFT"
-        />
+        <PanelElementText
+          title={
+            <>
+              Alphabet<sub>GOOG</sub>
+            </>
+          }
+          content={goog}
+        >
+          <img
+            alt="GOOG"
+            src="/images/goog.webp"
+            style={{ width: "32px", height: "32px" }}
+          />
+        </PanelElementText>
       </PanelGrid>
     </div>
   );

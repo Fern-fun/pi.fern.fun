@@ -7,32 +7,26 @@ import { Helmet } from "react-helmet";
 
 function Home() {
   const [ramData, setRamData] = useState([]);
-  const [ramLabel, setRamLabel] = useState([]);
 
   const [cpuTempData, setCpuTempData] = useState([]);
-  const [cpuTempLabel, setCpuTempLabel] = useState([]);
 
   const [cpuUsageData, setCpuUsageData] = useState([]);
-  const [cpuUsageLabel, setCpuUsageLabel] = useState([]);
 
   useEffect(() => {
     fetch("https://api.fern.fun/pi/hardware/chart/ramUsage/")
       .then((res) => res.json())
       .then((data) => {
-        setRamData(data["data"]);
-        setRamLabel(data["label"]);
+        setRamData(data);
       });
     fetch("https://api.fern.fun/pi/hardware/chart/cpuTemp/")
       .then((res) => res.json())
       .then((data) => {
-        setCpuTempData(data["data"]);
-        setCpuTempLabel(data["label"]);
+        setCpuTempData(data);
       });
-    fetch("https://api.fern.fun/pi/hardware/chart/ramUsage/")
+    fetch("https://api.fern.fun/pi/hardware/chart/cpuUsage/")
       .then((res) => res.json())
       .then((data) => {
-        setCpuUsageData(data["data"]);
-        setCpuUsageLabel(data["label"]);
+        setCpuUsageData(data);
       });
   }, []);
 
@@ -44,19 +38,9 @@ function Home() {
       <PanelLogo />
       <PanelGrid>
         <RealTimeHomePanel />
-
-        <PanelChart data={ramData} label={ramLabel} title="RAM usage" />
-
-        <PanelChart
-          data={cpuTempData}
-          label={cpuTempLabel}
-          title="CPU temperature"
-        />
-        <PanelChart
-          data={cpuUsageData}
-          label={cpuUsageLabel}
-          title="CPU usage"
-        />
+        <PanelChart data={ramData} title="RAM usage" />
+        <PanelChart data={cpuTempData} title="CPU temperature" />
+        <PanelChart data={cpuUsageData} title="CPU usage" />
       </PanelGrid>
     </div>
   );
