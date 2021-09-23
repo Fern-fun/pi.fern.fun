@@ -17,7 +17,7 @@ function RealTimeHomePanel() {
           setTemp(data["temp"] + "%");
           setMemory(data["memory"] + "%");
           setDisk(data["disk"]);
-          setCpuUsage(data["cpu usage"] + "%");
+          setCpuUsage(data["cpu usage"] + "°C");
         });
     }, 1000);
 
