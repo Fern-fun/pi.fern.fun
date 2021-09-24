@@ -14,10 +14,10 @@ function RealTimeHomePanel() {
         .then((res) => res.json())
         .then((data) => {
           setVersion(data["version"]);
-          setTemp(data["temp"] + "%");
+          setTemp(data["temp"] + "°C");
           setMemory(data["memory"] + "%");
           setDisk(data["disk"]);
-          setCpuUsage(data["cpu usage"] + "°C");
+          setCpuUsage(data["cpu usage"] + "%");
         });
     }, 1000);
 
