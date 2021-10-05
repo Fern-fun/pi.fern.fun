@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import PanelElementText from "../UI/PanelElementText";
+import PanelElementText from "../PanelElement/PanelElementText";
 
 function RealTimeHomePanel() {
   const [version, setVersion] = useState("Loading...");
@@ -29,6 +29,7 @@ function RealTimeHomePanel() {
         href="https://github.com/Fern-fun/Fern.fun-Server"
         target="_blank"
         rel="noreferrer"
+        className="home__panel__a"
       >
         <PanelElementText title="Version" content={version} />
       </a>

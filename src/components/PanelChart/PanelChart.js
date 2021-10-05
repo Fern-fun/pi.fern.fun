@@ -13,7 +13,6 @@ function PanelChart(props) {
   useEffect(() => {
     if (data != null || data != undefined) {
       loading = false;
-      console.log(data);
       data.map((item) => {
         setDataChart((dataChart) => [...dataChart, item.value]);
         setLabels((labels) => [

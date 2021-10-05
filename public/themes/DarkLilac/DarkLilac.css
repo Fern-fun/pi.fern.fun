@@ -1,0 +1,42 @@
+body {
+  background: #573469;
+  text-decoration: none;
+  color: white;
+  transition: 0.6s background-color;
+}
+
+nav {
+  background-color: #784890;
+  transition: 0.6s background-color;
+}
+
+.navText {
+  color: white;
+}
+
+.navText:hover {
+  background-color: #683f7c;
+  transition: 0.6s background-color;
+}
+
+.panel {
+  background-color: #784890;
+  transition: 0.6s background-color;
+}
+
+.carouselPanel {
+  background-color: #784890;
+  transition: 0.6s background-color;
+}
+.carouselPanel a {
+  color: white;
+}
+
+.home__panel__a {
+  color: white;
+}
+
+.footer {
+  background-color: #784890;
+  transition: 0.6s background-color;
+}

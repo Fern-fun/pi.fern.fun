@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
-import PanelGrid from "../../../components/UI/PanelGrid";
-import PanelElementText from "../../../components/UI/PanelElementText";
-import PanelLogo from "../../../components/UI/PanelLogo";
+import PanelGrid from "../../../components/PanelGrid/PanelGrid";
+import PanelElementText from "../../../components/PanelElement/PanelElementText";
+import PanelLogo from "../../../components/PanelLogo/PanelLogo";
 import { Helmet } from "react-helmet";
 
 function AppUpdate() {

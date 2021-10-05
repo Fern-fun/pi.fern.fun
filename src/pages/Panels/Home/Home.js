@@ -1,8 +1,8 @@
 import { React, useEffect, useState } from "react";
-import PanelGrid from "../../../components/UI/PanelGrid";
-import PanelChart from "../../../components/UI/PanelChart";
-import PanelLogo from "../../../components/UI/PanelLogo";
-import RealTimeHomePanel from "../../../components/Home/RealTimeHomePanel";
+import PanelGrid from "../../../components/PanelGrid/PanelGrid";
+import PanelChart from "../../../components/PanelChart/PanelChart";
+import PanelLogo from "../../../components/PanelLogo/PanelLogo";
+import RealTimeHomePanel from "../../../components/HomePanel/RealTimeHomePanel";
 import { Helmet } from "react-helmet";
 
 function Home() {

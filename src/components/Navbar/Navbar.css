@@ -90,15 +90,11 @@ li {
   text-decoration: none;
   color: white;
 }
-.navText:hover {
-  background-color: #26012e;
-}
 
 nav {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  background-color: #3e0748;
   box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
 }

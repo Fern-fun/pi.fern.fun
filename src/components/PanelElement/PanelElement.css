@@ -4,7 +4,6 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background-color: #3e0748;
 }
 a {
   text-decoration: none;
@@ -14,7 +13,6 @@ a {
   margin: 15px;
   position: relative;
   overflow: hidden;
-  background: #3e0748;
   display: flex;
   flex-direction: column;
   grid-gap: 10px;
@@ -36,5 +34,4 @@ a {
 .loading {
   display: block;
   margin: 0 auto;
-  border-color: red;
 }

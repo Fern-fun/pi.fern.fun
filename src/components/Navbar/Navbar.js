@@ -1,8 +1,11 @@
 import { React, useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useThemeSwitcher } from "react-css-theme-switcher";
 
 function Navbar() {
+  const { switcher, themes, currentTheme, status } = useThemeSwitcher();
+
   const [ham, setHam] = useState(false);
   const hideHamHandler = () => {
     setHam(false);
@@ -15,6 +18,18 @@ function Navbar() {
     }
   };
 
+  const themeChangeHandler = () => {
+    setHam(false);
+    const themesList = Object.keys(themes);
+    switcher({
+      theme:
+        themesList[(themesList.indexOf(currentTheme) + 1) % themesList.length],
+    });
+    localStorage.setItem(
+      "theme",
+      themesList[(themesList.indexOf(currentTheme) + 1) % themesList.length]
+    );
+  };
   return (
     <nav className="nav">
       <h1 style={{ display: "none" }} id="Menu">
@@ -54,6 +69,16 @@ function Navbar() {
         <li>
           <Link onClick={hideHamHandler} className="navText" to="/games">
             Games
+          </Link>
+        </li>
+        <li>
+          <Link onClick={hideHamHandler} className="navText"></Link>
+        </li>
+
+        {/* Theme change bnt */}
+        <li>
+          <Link onClick={themeChangeHandler} className="navText">
+            {currentTheme}
           </Link>
         </li>
       </ul>
