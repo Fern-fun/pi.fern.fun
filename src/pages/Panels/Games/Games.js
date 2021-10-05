@@ -13,7 +13,7 @@ function Games() {
         setGameListFreeToPlay(data);
       });
 
-    fetch("https://api.fern.fun/pi/games/free%20to%20play/")
+    fetch("https://api.fern.fun/pi/games/upcoming games/")
       .then((res) => res.json())
       .then((data) => {
         setGameListUpcomingGames(data);
@@ -25,19 +25,11 @@ function Games() {
         <title>{"Games - Panel"}</title>
       </Helmet>
       <PanelLogo />
-      <div style={{ display: "block", margin: "15px" }}>
-        <GamesCarousel
-          listImg={gamesListFreeToPlay}
-          itemAmount={gamesListFreeToPlay.length}
-          title="Free to play games"
-        />
-        <p></p>
-        <GamesCarousel
-          listImg={gamesListUpcomingGames}
-          itemAmount={gamesListUpcomingGames.length}
-          title="Upcoming games"
-        />
-      </div>
+      <GamesCarousel
+        listImg={gamesListUpcomingGames}
+        itemAmount={gamesListUpcomingGames.length}
+        title="Upcoming games"
+      />
     </div>
   );
 }
