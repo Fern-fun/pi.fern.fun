@@ -15,11 +15,8 @@ function Currencies() {
   const [shib, setShib] = useState("Loading...");
 
   const [chartBtcData, setChartBtcData] = useState([]);
-  const [chartBtcLabel, setChartBtcLabel] = useState([]);
   const [chartEthData, setChartEthData] = useState([]);
-  const [chartEthLabel, setChartEthLabel] = useState([]);
   const [chartDogeData, setChartDogeData] = useState([]);
-  const [chartDogeLabel, setChartDogeLabel] = useState([]);
 
   useEffect(() => {
     fetch("https://api.fern.fun/pi/currencies/crypto/")
@@ -86,21 +83,21 @@ function Currencies() {
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="BTC to PLN" content={`$${btc}`}>
+        <PanelElementText title="BTC to USD" content={`$${btc}`}>
           <img
             alt="BTC"
             src="/images/btc.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="ETH to PLN" content={`$${eth}`}>
+        <PanelElementText title="ETH to USD" content={`$${eth}`}>
           <img
             alt="ETH"
             src="/images/eth.webp"
             style={{ width: "32px", height: "32px" }}
           />
         </PanelElementText>
-        <PanelElementText title="DOGE to PLN" content={`$${doge}`}>
+        <PanelElementText title="DOGE to USD" content={`$${doge}`}>
           <img
             alt="DOGE"
             src="/images/doge.webp"
