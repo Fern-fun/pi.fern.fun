@@ -37,7 +37,7 @@ function RealTimeHomePanel() {
       <PanelElementText title="CPU usage" content={cpuUsage} />
       <PanelElementText title="Memory Usage" content={memory} />
       <PanelElementText title="Disk" content={disk} />
-      <PanelElementText title="Coming Soon" content="Loading..." />
+      {/* <PanelElementText title="Coming Soon" content="Loading..." /> */}
     </>
   );
 }
