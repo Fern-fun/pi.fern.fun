@@ -2,7 +2,7 @@ nav {
   z-index: 3;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 712px) {
   .grid {
     display: flex;
     flex-direction: column;
@@ -26,6 +26,7 @@ nav {
     transform: translate(-50%, -50%);
     border-radius: 0.1em;
     transition: all 0.3s ease-in-out;
+    margin-top: 9px;
   }
   .hamburger .line::before,
   .hamburger .line::after {
@@ -71,7 +72,10 @@ nav {
   #Menu {
     display: block !important;
     line-height: 48px;
-    padding-left: 0.5em;
+    padding-left: 25px;
+  }
+  #Menu img {
+    margin-top: 15px;
   }
 }
 
@@ -89,6 +93,16 @@ li {
   padding: 1rem 1rem;
   text-decoration: none;
   color: white;
+  margin-top: 10.195px;
+}
+
+.logoNav {
+  margin-top: 0px;
+}
+
+.first {
+  flex-grow: 1;
+  margin-left: 15px;
 }
 
 nav {

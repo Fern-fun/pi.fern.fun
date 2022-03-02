@@ -32,9 +32,9 @@ function Navbar() {
   };
   return (
     <nav className="nav">
-      <h1 style={{ display: "none" }} id="Menu">
-        Menu
-      </h1>
+      <div style={{ display: "none" }} id="Menu">
+        <img alt="logo" src="/images/fern.fun.png" width={"25px"} />
+      </div>
       <input
         type="checkbox"
         id="hamburger"
@@ -46,6 +46,19 @@ function Navbar() {
         <div className="line"></div>
       </label>
       <ul id="menu">
+        {ham ? null : (
+          <li className="first">
+            <a
+              href="https://fern.fun"
+              onClick={hideHamHandler}
+              className="navText logoNav"
+              target={"_blank"}
+            >
+              <img alt="logo" src="/images/fern.fun.png" width={"25px"} />
+            </a>
+          </li>
+        )}
+
         <li>
           <Link onClick={hideHamHandler} className="navText" to="/">
             Home
