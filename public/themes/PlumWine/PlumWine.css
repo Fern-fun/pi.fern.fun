@@ -14,7 +14,7 @@ nav {
   color: white;
 }
 
-.navText:hover {
+li:hover {
   background-color: #583c45;
 }
 

@@ -14,7 +14,7 @@ nav {
   color: black;
 }
 
-.navText:hover {
+li:hover {
   background-color: #ce3551;
   transition: 0.6s background-color;
 }
