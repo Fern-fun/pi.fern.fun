@@ -1,0 +1,73 @@
+@use "./varables.scss" as v;
+
+.tile {
+  background: v.$sidebar-color;
+  position: relative;
+
+  margin: 25px;
+  padding: 25px;
+
+  width: 250px;
+  height: 250px;
+
+  display: grid;
+  border: 2px solid v.$sidebar-color;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+  -moz-box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+  box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: v.$sidebar-color-low;
+  }
+
+  .title {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+    color: rgba(v.$color, 0.8);
+  }
+}
+
+.circle-progress {
+  margin: auto;
+  position: relative;
+
+  margin-top: 50px;
+
+  height: 120px;
+  width: 120px;
+  background: v.$secoundary-color;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.circle-progress::before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: v.$sidebar-color;
+  border-radius: 50%;
+}
+
+.value-container {
+  position: relative;
+  font-size: 1.5rem;
+}

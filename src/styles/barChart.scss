@@ -1,0 +1,82 @@
+@use "./varables.scss" as v;
+
+.bar-chart {
+  background: v.$sidebar-color;
+  position: relative;
+
+  margin: 25px;
+  padding: 25px;
+
+  @media screen and (min-width: v.$mobile-width) {
+    width: 600px;
+    height: 250px;
+  }
+
+  border-radius: 5px;
+
+  -webkit-box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+  -moz-box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+  box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+
+  .bar-chart-title {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+
+    span {
+      font-size: 1.2em;
+      color: rgba(v.$color, 0.8);
+    }
+  }
+
+  .bar-chart-item {
+    position: relative;
+    top: 50%;
+    transform: translateY(-42.5%);
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    gap: 2em;
+
+    .bar {
+      background-color: #f5f5f5;
+      border-radius: 5px;
+
+      position: relative;
+      width: calc(100% / 12);
+
+      .bar-element {
+        visibility: hidden;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        background-color: rgba($color: v.$base-color, $alpha: 0.5);
+        border-radius: 5px;
+
+        transition: background-color 0.5s ease-in-out;
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

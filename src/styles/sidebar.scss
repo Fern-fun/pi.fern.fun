@@ -1,0 +1,74 @@
+@use "./varables.scss" as v;
+
+.sidebar {
+  background: v.$sidebar-color;
+  width: 100%;
+
+  @media screen and (min-width: v.$mobile-width) {
+    position: relative;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 300px;
+
+    .logo {
+      width: auto;
+      margin: auto;
+
+      img {
+        max-width: 200px;
+      }
+    }
+
+    .nav {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: grid;
+      grid-template-columns: 200px;
+      grid-template-rows: repeat(3, 50px);
+
+      text-align: left;
+      font-size: 1.1rem;
+
+      div {
+        position: relative;
+        display: inline-flex;
+        padding: 15px;
+        span {
+          margin-left: 25px;
+          line-height: 22px;
+
+          &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            top: 100%;
+            left: 0;
+
+            background: v.$secoundary-color;
+            transition: transform 0.5s;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transform-origin: right;
+          }
+
+          &:hover {
+            color: v.$hoverTextColor;
+            cursor: pointer;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: v.$mobile-width) {
+  }
+}

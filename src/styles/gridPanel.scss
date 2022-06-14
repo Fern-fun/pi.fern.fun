@@ -1,0 +1,11 @@
+@use "./varables.scss" as v;
+
+.gridPanel {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 1em;
+  flex-direction: row;
+  align-content: flex-start; /* NEW */
+}
