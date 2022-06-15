@@ -7,8 +7,10 @@
   margin: 25px;
   padding: 25px;
 
-  width: 250px;
-  height: 250px;
+  @media screen and (min-width: v.$mobile-width) {
+    width: 250px;
+    height: 250px;
+  }
 
   display: grid;
   border: 2px solid v.$sidebar-color;

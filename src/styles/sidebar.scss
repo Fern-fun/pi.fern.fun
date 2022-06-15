@@ -1,5 +1,5 @@
 @use "./varables.scss" as v;
-
+@import url("./hamburgers.css");
 .sidebar {
   background: v.$sidebar-color;
   width: 100%;
@@ -17,6 +17,10 @@
       img {
         max-width: 200px;
       }
+    }
+
+    .hamburger {
+      visibility: hidden;
     }
 
     .nav {
@@ -70,5 +74,40 @@
   }
 
   @media screen and (max-width: v.$mobile-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .logo {
+      width: auto;
+      margin: auto;
+
+      img {
+        max-width: 200px;
+      }
+    }
+
+    .nav {
+      display: none;
+      font-size: 1.1rem;
+
+      div {
+        width: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 20px;
+        }
+
+        span {
+          margin-left: 25px;
+        }
+
+        margin: 15px;
+        padding: 15px;
+      }
+    }
   }
 }

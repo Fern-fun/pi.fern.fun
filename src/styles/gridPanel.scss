@@ -1,11 +1,17 @@
 @use "./varables.scss" as v;
 
 .gridPanel {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-right: 1em;
-  flex-direction: row;
-  align-content: flex-start; /* NEW */
+  @media screen and (min-width: v.$mobile-width) {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 1em;
+    flex-direction: row;
+    align-content: flex-start; /* NEW */
+  }
+
+  @media screen and (max-width: v.$mobile-width) {
+    
+  }
 }

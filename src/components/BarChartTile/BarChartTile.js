@@ -16,7 +16,7 @@ function BarChartTile() {
   return (
     <div className="bar-chart">
       <div className="bar-chart-title">
-        <span>Weekly RAM usage</span>
+        <span>Average Weekly RAM usage</span>
       </div>
       <div className="bar-chart-item">
         {barKeys.map((key, index) => (

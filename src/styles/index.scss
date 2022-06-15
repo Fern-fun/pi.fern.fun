@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  color: rgba(v.$sidebar-color, 0.8);
+  background: rgba(v.$secoundary-color, 0.5);
+}
+
 body {
   font-family: "Fira Code", monospace;
   font-size: 16px;
@@ -21,4 +26,8 @@ body {
 .page {
   display: grid;
   grid-template-columns: 300px 1fr;
+
+  @media screen and (max-width: v.$mobile-width) {
+    display: block;
+  }
 }
