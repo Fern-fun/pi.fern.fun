@@ -1,0 +1,33 @@
+@use "./varables.scss" as v;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap");
+@import url("./sidebar.scss");
+@import url("./chartTile.scss");
+@import url("./gridPanel.scss");
+@import url("./barChart.scss");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  color: rgba(v.$sidebar-color, 0.8);
+  background: rgba(v.$secoundary-color, 0.5);
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  background: v.$base-color;
+  color: v.$color;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+
+  @media screen and (max-width: v.$mobile-width) {
+    display: block;
+  }
+}
