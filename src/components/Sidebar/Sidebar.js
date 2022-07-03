@@ -13,12 +13,14 @@ function Sidebar() {
         <img src="https://fern.fun/img/fern.fun.png" alt="logo" />
       </div>
       <button
-        class={"hamburger hamburger--spin" + (hamburger ? " is-active" : "")}
+        className={
+          "hamburger hamburger--spin" + (hamburger ? " is-active" : "")
+        }
         type="button"
         onClick={hamburgerHandler}
       >
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
+        <span className="hamburger-box">
+          <span className="hamburger-inner"></span>
         </span>
       </button>
 
