@@ -23,18 +23,24 @@
   box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
 
   .bar-chart-title {
-    position: absolute;
-    top: 7%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    position: relative;
 
     margin: auto;
     margin-bottom: 10px;
     padding: 10px;
 
     span {
+      position: absolute;
+      top: 7%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
       font-size: 1.2em;
       color: rgba(v.$color, 0.8);
+    }
+    @media screen and (max-width: 630px) {
+      font-size: 0.8em;
     }
   }
 
@@ -91,6 +97,12 @@
           left: 50%;
           transform: translate(-50%, -50%);
         }
+      }
+    }
+
+    @media screen and (max-width: 565px) {
+      .bar:last-child {
+        display: none;
       }
     }
   }
