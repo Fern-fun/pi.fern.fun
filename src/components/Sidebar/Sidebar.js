@@ -27,7 +27,7 @@ function Sidebar() {
 
       <div className="nav" style={hamburger ? { display: "block" } : null}>
         <Link to="/">
-          <div onClick={(e) => window.location.replace("/")}>
+          <div>
             <img src="/img/home.svg" alt="home" />
             <span>Dashboard</span>
           </div>
