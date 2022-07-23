@@ -1,9 +1,10 @@
-@use "./varables.scss" as v;
+@use "./variables.scss" as v;
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap");
 @import url("./sidebar.scss");
 @import url("./chartTile.scss");
 @import url("./gridPanel.scss");
 @import url("./barChart.scss");
+@import url("./counterTile.scss");
 
 * {
   margin: 0;

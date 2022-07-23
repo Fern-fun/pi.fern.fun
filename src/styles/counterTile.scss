@@ -1,0 +1,33 @@
+@use "./variables.scss" as v;
+
+.tile {
+  .tile-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.1em;
+    color: rgba(v.$color, 0.8);
+  }
+
+  .tile-content {
+    margin: auto;
+    position: relative;
+
+    top: 25%;
+    transform: translateY(-50%);
+
+    margin-top: 50px;
+
+    height: 120px;
+    width: 120px;
+    font-size: 1.2em;
+    display: grid;
+    place-items: center;
+
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [hamburger, setHamburger] = React.useState(false);
@@ -25,10 +26,19 @@ function Sidebar() {
       </button>
 
       <div className="nav" style={hamburger ? { display: "block" } : null}>
-        <div>
-          <img src="/img/home.svg" alt="home" />
-          <span>Dashboard</span>
-        </div>
+        <Link to="/">
+          <div onClick={(e) => window.location.replace("/")}>
+            <img src="/img/home.svg" alt="home" />
+            <span>Dashboard</span>
+          </div>
+        </Link>
+
+        <Link to="/api">
+          <div>
+            <img src="/img/api.svg" alt="home" />
+            <span>API</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

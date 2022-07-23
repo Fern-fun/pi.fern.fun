@@ -1,4 +1,4 @@
-@use "./varables.scss" as v;
+@use "./variables.scss" as v;
 
 .gridPanel {
   @media screen and (min-width: v.$mobile-width) {
@@ -12,6 +12,5 @@
   }
 
   @media screen and (max-width: v.$mobile-width) {
-    
   }
 }

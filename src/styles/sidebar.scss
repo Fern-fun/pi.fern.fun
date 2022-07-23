@@ -1,4 +1,4 @@
-@use "./varables.scss" as v;
+@use "./variables.scss" as v;
 @import url("./hamburgers.css");
 .sidebar {
   background: v.$sidebar-color;
@@ -32,17 +32,29 @@
       display: grid;
       grid-template-columns: 200px;
       grid-template-rows: repeat(3, 50px);
-
+      gap: 20px;
       text-align: left;
       font-size: 1.1rem;
 
-      div {
-        position: relative;
-        display: inline-flex;
-        padding: 15px;
-        span {
-          margin-left: 25px;
-          line-height: 22px;
+      a {
+        color: white;
+        text-decoration: none;
+        div {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+
+          padding: 15px;
+          width: 100%;
+
+          img {
+            width: 32px;
+          }
+
+          span {
+            margin-left: 25px;
+            line-height: 22px;
+          }
 
           &::after {
             position: absolute;
@@ -89,24 +101,28 @@
     .nav {
       display: none;
       font-size: 1.1rem;
+      a {
+        color: white;
+        text-decoration: none;
 
-      div {
-        width: max-content;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        div {
+          width: max-content;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
 
-        img {
-          width: 20px;
+          img {
+            width: 20px;
+          }
+
+          span {
+            margin-left: 25px;
+          }
+
+          margin: 15px;
+          padding: 15px;
         }
-
-        span {
-          margin-left: 25px;
-        }
-
-        margin: 15px;
-        padding: 15px;
       }
     }
   }
