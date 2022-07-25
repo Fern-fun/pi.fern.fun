@@ -39,6 +39,13 @@ function Sidebar() {
             <span>API</span>
           </div>
         </Link>
+
+        <Link to="/todo">
+          <div>
+            <img src="/img/list.svg" alt="home" />
+            <span>TODO</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

@@ -6,7 +6,8 @@
 
   @media screen and (min-width: v.$mobile-width) {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-rows: 300px;
 

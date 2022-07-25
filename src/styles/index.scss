@@ -5,11 +5,14 @@
 @import url("./gridPanel.scss");
 @import url("./barChart.scss");
 @import url("./counterTile.scss");
+@import url("./toDoList.scss");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: "Fira Code", monospace;
 }
 
 ::selection {
@@ -22,6 +25,26 @@ body {
   font-size: 16px;
   background: v.$base-color;
   color: v.$color;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: v.$bnt-green;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: v.$bnt-green;
 }
 
 .page {
