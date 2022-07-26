@@ -65,10 +65,15 @@
   }
 
   .to-do-bnt {
+    @media screen and (max-width: v.$mobile-width) {
+      position: fixed;
+      bottom: 0;
+    }
+
+    background: v.$sidebar-color;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
 
     .bnt {
       cursor: pointer;
@@ -119,7 +124,7 @@
   }
 }
 
-.popup {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -137,7 +142,7 @@
   }
 }
 
-.popup-content {
+.modal-content {
   input {
     cursor: pointer;
     width: 100%;

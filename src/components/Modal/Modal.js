@@ -5,13 +5,13 @@ function Modal(props) {
 
   return (
     <div
-      className="popup"
+      className="modal"
       style={visable ? { display: "flex" } : { display: "none" }}
     >
       <div>
-        <div className="popup-title">{title}</div>
+        <div className="modal-title">{title}</div>
 
-        <div className="popup-content">{content}</div>
+        <div className="modal-content">{content}</div>
       </div>
     </div>
   );
