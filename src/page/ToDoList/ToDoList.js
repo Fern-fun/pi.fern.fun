@@ -10,7 +10,9 @@ function ToDoList() {
   const [email, setEmail] = useState("");
 
   const [displayEmailPopUp, setDisplayEmailPopUp] = useState(false);
+  const [autosave, setAutosave] = useState(0);
 
+  //! Auto save & load to cloud
   useEffect(() => {
     const todoData = localStorage.getItem("todoList");
     if (todoData) {
@@ -24,6 +26,23 @@ function ToDoList() {
     }
   }, []);
 
+  //! Auto load from cloud
+  useEffect(() => {
+    //!Check user is in database
+    // console.log("Auto Load");
+    fetch(`https://api.fern.fun/pi/todo/get/${localStorage.getItem("email")}`)
+      .then((res) => res.json())
+      .then((data) => {
+        //? console.log(data);
+        setTodoList(JSON.parse(data[0].todo));
+        localStorage.setItem("todoList", data[0].todo);
+      })
+      .catch((err) => {
+        //? console.log(err);
+      });
+  }, []);
+
+  //? Add bnt function
   const tileAddHandler = (e) => {
     e.preventDefault();
     if (inputText.length <= 0) return;
@@ -35,8 +54,57 @@ function ToDoList() {
     setTodoList([...toDoList, newTile]);
     setInputText("");
     localStorage.setItem("todoList", JSON.stringify([...toDoList, newTile]));
+
+    //! Auto save to cloud
+    // console.log("Auto Save");
+    const postReqData = {
+      email: email,
+      todo: localStorage.getItem("todoList"),
+    };
+
+    //!Check user is in database
+    fetch(`https://api.fern.fun/pi/todo/get/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        //!IF user is't in database add user
+        if (data.length === 0) {
+          fetch("https://api.fern.fun/pi/todo/add", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postReqData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              //? console.log(data);
+            })
+            .catch((err) => {
+              //? console.log(err);
+            });
+        }
+        //!If user is in database, update todo list
+        else {
+          fetch("https://api.fern.fun/pi/todo/update", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postReqData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              //? console.log(data);
+            })
+            .catch((err) => {
+              //? console.log(err);
+            });
+        }
+      });
+    setAutosave(autosave + 1);
   };
 
+  //? Delete bnt function
   const tileDeleteHandler = (e) => {
     e.preventDefault();
     setTodoList(
@@ -48,16 +116,66 @@ function ToDoList() {
         toDoList.filter((tile) => tile.id !== e.target.attributes[1].value)
       )
     );
+    //! Auto save to cloud
+    // console.log("Auto Save");
+    const postReqData = {
+      email: email,
+      todo: JSON.stringify(
+        toDoList.filter((tile) => tile.id !== e.target.attributes[1].value)
+      ),
+    };
+
+    //!Check user is in database
+    fetch(`https://api.fern.fun/pi/todo/get/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        //!IF user is't in database add user
+        if (data.length === 0) {
+          fetch("https://api.fern.fun/pi/todo/add", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postReqData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              //? console.log(data);
+            })
+            .catch((err) => {
+              //? console.log(err);
+            });
+        }
+        //!If user is in database, update todo list
+        else {
+          fetch("https://api.fern.fun/pi/todo/update", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postReqData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              //? console.log(data);
+            })
+            .catch((err) => {
+              //? console.log(err);
+            });
+        }
+      });
+    setAutosave(autosave + 1);
   };
 
+  //? Edit bnt function
   const emailSaveHandler = (e) => {
     e.preventDefault();
     setDisplayEmailPopUp(false);
     localStorage.setItem("email", email);
   };
 
+  //? Save bnt function
   const todoListSaveHandler = (e) => {
-    e.preventDefault();
     const postReqData = { email: email, todo: JSON.stringify(toDoList) };
 
     //!Check user is in database
@@ -101,6 +219,7 @@ function ToDoList() {
       });
   };
 
+  //? Load bnt function
   const todoListLoadHandler = (e) => {
     e.preventDefault();
     //!Check user is in database
