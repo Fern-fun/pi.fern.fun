@@ -30,6 +30,11 @@ function ToDoList() {
   useEffect(() => {
     //!Check user is in database
     // console.log("Auto Load");
+    autoLoad();
+  }, []);
+
+  //? Auto load from cloud
+  const autoLoad = () => {
     fetch(`https://api.fern.fun/pi/todo/get/${localStorage.getItem("email")}`)
       .then((res) => res.json())
       .then((data) => {
@@ -40,7 +45,7 @@ function ToDoList() {
       .catch((err) => {
         //? console.log(err);
       });
-  }, []);
+  };
 
   //? Add bnt function
   const tileAddHandler = (e) => {
@@ -172,6 +177,7 @@ function ToDoList() {
     e.preventDefault();
     setDisplayEmailPopUp(false);
     localStorage.setItem("email", email);
+    autoLoad();
   };
 
   //? Save bnt function
