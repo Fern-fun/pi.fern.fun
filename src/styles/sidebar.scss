@@ -8,13 +8,17 @@
     position: relative;
     min-height: 100vh;
     height: 100%;
-    display: grid;
-    grid-template-rows: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .hamburger {
+      display: none;
+    }
 
     .logo {
-      width: auto;
-      margin: auto;
-
+      width: fit-content;
       img {
         max-width: 200px;
       }
@@ -25,12 +29,10 @@
     }
 
     .nav {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
       display: grid;
+      justify-content: center;
+      align-items: center;
+
       grid-template-columns: 200px;
       grid-template-rows: repeat(3, 50px);
       gap: 20px;
