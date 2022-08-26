@@ -39,7 +39,13 @@ function Home({ loginURL }) {
         <CircleChartTile title={"CPU"} value={cpu} />
         <CircleChartTile title={"RAM"} value={memory} />
         <CircleChartTile title={"DISK"} value={disk} />
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense
+          fallback={
+            <div className="loading">
+              <img src="/img/loading.svg" />
+            </div>
+          }
+        >
           <BarChartTile />
         </React.Suspense>
       </GridPanel>

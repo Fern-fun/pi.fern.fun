@@ -62,6 +62,16 @@ function Sidebar({ loginURL }) {
             <span>CPV</span>
           </div>
         </Link>
+
+        {isAuth() ? (
+          <Link to="/astro">
+            <div>
+              <img src="/img/magic.svg" alt="astro" />
+              <span>Astro</span>
+            </div>
+          </Link>
+        ) : null}
+
         {isAuth() ? (
           <a onClick={logoutHandler}>
             <div>

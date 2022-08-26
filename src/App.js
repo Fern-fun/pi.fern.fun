@@ -10,6 +10,7 @@ import ToDoList from "./page/ToDoList/ToDoList";
 import { isAuth, getCookie } from "./components/Auth/Auth";
 
 import "./styles/index.scss";
+import Astro from "./page/Astro/Astro";
 
 const CLIENT_ID = "1002870054393753640";
 const GUILD_ID = "773527241715613707";
@@ -71,6 +72,13 @@ function App() {
           element={<ToDoList loginURL={loginURL} user={user} />}
         />
         <Route path="/cpv" element={<ColorPalette loginURL={loginURL} />} />
+
+        <Route path="/astro" element={<Astro loginURL={loginURL} type="" />} />
+        <Route
+          path="/astro/neo"
+          element={<Astro loginURL={loginURL} type="neo" />}
+        />
+
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
