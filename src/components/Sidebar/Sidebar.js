@@ -1,11 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Sidebar() {
+import { delCookie, isAuth } from "../Auth/Auth";
+
+function Sidebar({ loginURL }) {
   const [hamburger, setHamburger] = React.useState(false);
+  const navigate = useNavigate();
 
   const hamburgerHandler = () => {
     setHamburger(!hamburger);
+  };
+
+  const logoutHandler = () => {
+    delCookie("token");
+    delCookie("refresh");
+    navigate("/login");
   };
 
   return (
@@ -53,6 +62,21 @@ function Sidebar() {
             <span>CPV</span>
           </div>
         </Link>
+        {isAuth() ? (
+          <a onClick={logoutHandler}>
+            <div>
+              <img src="/img/discord-logo.svg" alt="login" />
+              <span>Logout</span>
+            </div>
+          </a>
+        ) : (
+          <a href={loginURL}>
+            <div>
+              <img src="/img/discord-logo.svg" alt="login" />
+              <span>Login</span>
+            </div>
+          </a>
+        )}
       </div>
     </div>
   );

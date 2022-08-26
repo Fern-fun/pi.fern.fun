@@ -7,7 +7,7 @@ const BarChartTile = React.lazy(() =>
   import("../../components/BarChartTile/BarChartTile")
 );
 
-function Home() {
+function Home({ loginURL }) {
   const [cpu, setCpu] = React.useState(0);
   const [memory, setMemory] = React.useState(0);
   const [disk, setDisk] = React.useState(0);
@@ -34,7 +34,7 @@ function Home() {
 
   return (
     <div className="page">
-      <Sidebar />
+      <Sidebar loginURL={loginURL} />
       <GridPanel>
         <CircleChartTile title={"CPU"} value={cpu} />
         <CircleChartTile title={"RAM"} value={memory} />

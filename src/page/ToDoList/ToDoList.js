@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import uuid from "react-uuid";
 import Modal from "../../components/Modal/Modal";
 
-function ToDoList() {
+function ToDoList({ loginURL, user }) {
   const [toDoList, setTodoList] = useState([]);
 
   const [inputText, setInputText] = useState("");
@@ -243,7 +243,7 @@ function ToDoList() {
 
   return (
     <div className="page">
-      <Sidebar />
+      <Sidebar loginURL={loginURL} />
       <div className="to-do-panel">
         <Modal
           visable={displayEmailPopUp}
