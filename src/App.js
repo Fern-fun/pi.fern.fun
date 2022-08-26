@@ -44,7 +44,6 @@ function App() {
             .then((res) => res.json())
             .then((data) => {
               setUser(data);
-              console.log(data);
             });
         });
 
@@ -57,7 +56,6 @@ function App() {
         .then((res) => res.json())
         .then((data) => {
           setGuild(data);
-          console.log(data);
         });
     }
   }, []);

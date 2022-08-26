@@ -1,8 +1,7 @@
-import { wait } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { delCookie, getCookie, isAuth } from "../Auth/Auth";
+import { delCookie, isAuth } from "../Auth/Auth";
 
 function Sidebar({ loginURL }) {
   const [hamburger, setHamburger] = React.useState(false);
@@ -63,24 +62,21 @@ function Sidebar({ loginURL }) {
             <span>CPV</span>
           </div>
         </Link>
-
-        {loginURL !== "" ? (
-          isAuth ? (
-            <a onClick={logoutHandler}>
-              <div>
-                <img src="/img/discord-logo.svg" alt="login" />
-                <span>Logout</span>
-              </div>
-            </a>
-          ) : (
-            <a href={loginURL}>
-              <div>
-                <img src="/img/discord-logo.svg" alt="login" />
-                <span>Login</span>
-              </div>
-            </a>
-          )
-        ) : null}
+        {isAuth() ? (
+          <a onClick={logoutHandler}>
+            <div>
+              <img src="/img/discord-logo.svg" alt="login" />
+              <span>Logout</span>
+            </div>
+          </a>
+        ) : (
+          <a href={loginURL}>
+            <div>
+              <img src="/img/discord-logo.svg" alt="login" />
+              <span>Login</span>
+            </div>
+          </a>
+        )}
       </div>
     </div>
   );

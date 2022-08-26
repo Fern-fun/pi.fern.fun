@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 export const getCookie = (cname) => {
@@ -55,7 +54,11 @@ export const Auth = ({ state }) => {
 };
 
 export const isAuth = () => {
-  return getCookie("token") != "";
+  if (getCookie("token") != "") {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 export const Logout = () => {
