@@ -53,6 +53,13 @@ function Sidebar() {
             <span>CPV</span>
           </div>
         </Link>
+
+        <Link to="/jv">
+          <div>
+            <img src="/img/visibility.svg" alt="cpv" />
+            <span>JV</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

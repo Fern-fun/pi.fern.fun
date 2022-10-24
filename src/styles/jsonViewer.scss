@@ -1,0 +1,46 @@
+.jv-con {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+
+  span {
+    margin: 5px;
+  }
+}
+
+.jv-symbol {
+  color: #fff;
+  font-weight: bold;
+}
+
+.jv-current {
+  line-height: 30px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.jv-String {
+  display: inline-block;
+  color: #66d9ef;
+}
+
+.jv-Boolean {
+  display: inline-block;
+  color: #a6e22e;
+}
+
+.jv-Number {
+  display: inline-block;
+  color: #f92672;
+}
+
+.jv-Null {
+  display: inline-block;
+  color: #e6db74;
+}
+
+.jv-folder {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
