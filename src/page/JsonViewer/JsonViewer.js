@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "../../components/Modal/Modal";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const isString = (val) => {
   return typeof val === "string";
@@ -121,7 +122,7 @@ function validateUrl(value) {
   );
 }
 
-function JsonViewer({ json }) {
+function JsonViewer({ json, loginURL }) {
   const [viewer, setViewer] = React.useState([]);
   const [url, setUrl] = React.useState("");
   const [rawJson, setRawJson] = React.useState("");
@@ -160,7 +161,9 @@ function JsonViewer({ json }) {
   };
 
   return (
-    <>
+    <div className="page">
+      <Sidebar loginURL={loginURL} />
+
       {!visable ? (
         <div className="jv-con">{viewer}</div>
       ) : (
@@ -183,7 +186,7 @@ function JsonViewer({ json }) {
           }
         />
       )}
-    </>
+    </div>
   );
 }
 

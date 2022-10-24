@@ -65,11 +65,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="*" element={<Home />} />
-        <Route path="/api" element={<Api />} />
-        <Route path="/todo" element={<ToDoList />} />
-        <Route path="/cpv" element={<ColorPalette />} />
+        <Route index element={<Home loginURL={loginURL} />} />
+        <Route path="*" element={<Home loginURL={loginURL} />} />
+        <Route path="/api" element={<Api loginURL={loginURL} />} />
+        <Route path="/todo" element={<ToDoList loginURL={loginURL} />} />
+        <Route path="/cpv" element={<ColorPalette loginURL={loginURL} />} />
+        <Route path="/jv" element={<JsonViewer loginURL={loginURL} />} />
       </Routes>
     </BrowserRouter>
   );
