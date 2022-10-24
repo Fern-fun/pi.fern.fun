@@ -1,0 +1,54 @@
+@use "./variables.scss" as v;
+
+.astro-menu {
+  background: v.$sidebar-color;
+  position: relative;
+
+  margin: 15px;
+  padding: 25px;
+
+  @media screen and (min-width: v.$mobile-width) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @media screen and (max-width: v.$mobile-width) {
+    margin: 0;
+    margin-top: 25px;
+    height: 500px;
+    width: 100%;
+  }
+
+  border-radius: 5px;
+
+  -webkit-box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+  -moz-box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+  box-shadow: 4px 14px 33px -25px v.$sidebar-color-low;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  div {
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: v.$astroLink;
+    }
+  }
+}
+
+.astro-neo-menu {
+  @media screen and (min-width: v.$mobile-width) {
+    width: 400px;
+    height: 200px;
+  }
+
+  @media screen and (max-width: v.$mobile-width) {
+    height: 500px;
+    width: 100%;
+  }
+}

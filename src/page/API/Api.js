@@ -21,7 +21,7 @@ const nFormater = (value) => {
   return newValue;
 };
 
-function Api() {
+function Api({ loginURL }) {
   const [todayQueries, setTodayQueries] = React.useState([0, ""]);
   const [totalQueries, setTotalQueries] = React.useState([0, ""]);
 
@@ -41,7 +41,7 @@ function Api() {
 
   return (
     <div className="page">
-      <Sidebar />
+      <Sidebar loginURL={loginURL} />
       <GridPanel>
         <CounterTile
           title={"Total queries"}

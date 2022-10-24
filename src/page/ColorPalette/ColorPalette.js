@@ -2,10 +2,10 @@ import React from "react";
 import { Cpv } from "../../components/CPV/CPV";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
-function ColorPalette() {
+function ColorPalette({ loginURL }) {
   return (
     <div className="page">
-      <Sidebar />
+      <Sidebar loginURL={loginURL} />
       <div>
         <Cpv />
       </div>
