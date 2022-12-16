@@ -1,20 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { delCookie, isAuth } from "../Auth/Auth";
-
 function Sidebar({ loginURL }) {
   const [hamburger, setHamburger] = React.useState(false);
   const navigate = useNavigate();
 
   const hamburgerHandler = () => {
     setHamburger(!hamburger);
-  };
-
-  const logoutHandler = () => {
-    delCookie("token");
-    delCookie("refresh");
-    navigate("/login");
   };
 
   return (
@@ -42,13 +34,6 @@ function Sidebar({ loginURL }) {
           </div>
         </Link>
 
-        <Link to="/api">
-          <div>
-            <img src="/img/api.svg" alt="api" />
-            <span>API</span>
-          </div>
-        </Link>
-
         <Link to="/todo">
           <div>
             <img src="/img/list.svg" alt="todo" />
@@ -63,37 +48,12 @@ function Sidebar({ loginURL }) {
           </div>
         </Link>
 
-        <Link to="/jv">
+        <a href="https://tools.fern.fun/">
           <div>
-            <img src="/img/visibility.svg" alt="cpv" />
-            <span>JV</span>
+            <img src="/img/handyman.svg" alt="cpv" />
+            <span>Tools</span>
           </div>
-        </Link>
-
-        {isAuth() ? (
-          <Link to="/astro">
-            <div>
-              <img src="/img/magic.svg" alt="astro" />
-              <span>Astro</span>
-            </div>
-          </Link>
-        ) : null}
-
-        {isAuth() ? (
-          <a onClick={logoutHandler}>
-            <div>
-              <img src="/img/discord-logo.svg" alt="login" />
-              <span>Logout</span>
-            </div>
-          </a>
-        ) : (
-          <a href={loginURL}>
-            <div>
-              <img src="/img/discord-logo.svg" alt="login" />
-              <span>Login</span>
-            </div>
-          </a>
-        )}
+        </a>
       </div>
     </div>
   );
