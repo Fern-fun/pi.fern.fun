@@ -76,15 +76,17 @@ function Home({ loginURL }) {
         <CircleChartTile title={"RAM"} value={memory} />
         <CircleChartTile title={"DISK"} value={disk} />
         <CounterTile
-          title={"Total queries"}
+          title={"Total API queries"}
           value={totalQueries[0]}
           suffix={totalQueries[1]}
         />
+
         <CounterTile
-          title={"Today queries"}
+          title={"Today API queries"}
           value={todayQueries[0]}
           suffix={todayQueries[1]}
         />
+
         <React.Suspense
           fallback={
             <div className="loading">

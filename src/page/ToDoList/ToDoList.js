@@ -243,10 +243,11 @@ function ToDoList({ loginURL, user }) {
 
   return (
     <div className="page">
-      <Sidebar loginURL={loginURL} />
+      <Sidebar />
       <div className="to-do-panel">
         <Modal
           visable={displayEmailPopUp}
+          setVisable={setDisplayEmailPopUp}
           title={<span>Email use to save your todo list to our cloud</span>}
           content={
             <>

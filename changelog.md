@@ -14,5 +14,6 @@ All notable changes to this project will be documented in this file.
 ### Changed features
 
 - Add redirect to Tools to sidebar
+- Add close bnt to modal
 
 ### Fixed bugs

@@ -14,6 +14,19 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
   }
+
+  #close {
+    img {
+      cursor: pointer;
+
+      transition: transform 0.4s ease-in-out;
+
+      &:hover {
+        transform: rotate(180deg);
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+  }
 }
 
 .modal-content {
