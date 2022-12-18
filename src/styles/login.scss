@@ -1,0 +1,95 @@
+@use "./variables.scss" as v;
+
+.loginPanel {
+  display: grid;
+  grid-template-rows: 100px auto;
+  .loginPanelElement {
+    margin: auto;
+    width: fit-content;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .loginPanelForm {
+    display: flex;
+    flex-direction: column;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      border: none;
+      outline: none;
+      width: 300px;
+      background-color: transparent;
+      border-bottom: 2px solid v.$secoundary-color;
+      color: v.$color;
+
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background-color: transparent;
+
+      border: 2px solid v.$secoundary-color;
+      border-radius: 8px;
+
+      color: v.$color;
+      padding: 15px;
+      width: 300px;
+
+      transition: background-color 0.4s ease-in-out;
+
+      &:hover {
+        background-color: rgba($color: v.$secoundary-color, $alpha: 0.2);
+      }
+    }
+
+    #login {
+      margin-top: 15px;
+      font-size: 0.8rem;
+      text-align: left;
+      cursor: pointer;
+      text-decoration: none;
+      color: v.$color;
+    }
+
+    #error {
+      max-width: 300px;
+      text-align: left;
+      margin: 10px;
+      font-size: 0.8rem;
+      color: v.$error-color;
+    }
+
+    div {
+      width: 300px;
+      margin-top: 50px;
+      overflow-wrap: break-word;
+      text-align: left;
+
+      span {
+        margin-top: 15px;
+        font-size: 0.6rem;
+
+        color: v.$color;
+      }
+    }
+
+    a {
+      color: v.$bnt-blue;
+      cursor: pointer;
+    }
+  }
+
+  #footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+  }
+}

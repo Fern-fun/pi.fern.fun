@@ -2,6 +2,17 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.0] - 18.12.2022
+
+### Major changes
+
+- Add login system
+- Add `react-helmet`
+
+### Changed features
+
+### Fixed bugs
+
 ## [5.2.0] - 16.12.2022
 
 ### Major changes

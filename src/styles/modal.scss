@@ -1,3 +1,5 @@
+@use "./variables.scss" as v;
+
 .modal {
   position: fixed;
   top: 0;
@@ -78,5 +80,23 @@
     margin: 10px;
     color: #fff;
     resize: none;
+  }
+
+  #g-bnt {
+    border-color: v.$secoundary-color !important;
+
+    &:hover {
+      background: rgba($color: v.$secoundary-color, $alpha: 0.6) !important;
+      color: #fff;
+    }
+  }
+
+  #r-bnt {
+    border-color: v.$error-color !important;
+
+    &:hover {
+      background: rgba($color: v.$error-color, $alpha: 0.6) !important;
+      color: #fff;
+    }
   }
 }

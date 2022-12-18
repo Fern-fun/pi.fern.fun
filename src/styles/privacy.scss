@@ -1,0 +1,27 @@
+@use "./variables.scss" as v;
+
+.privacy {
+  padding: 15px 15px 15px 15px;
+  text-align: left;
+
+  p {
+    padding: 0 0 0 15px;
+    margin: 5px;
+  }
+
+  ul {
+    padding: 0 0 0 40px;
+    margin: 5px;
+  }
+
+  a {
+    color: v.$secoundary-color;
+    text-decoration: none;
+  }
+}
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+}

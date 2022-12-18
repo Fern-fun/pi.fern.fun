@@ -48,10 +48,17 @@ function Sidebar({ loginURL }) {
           </div>
         </Link>
 
-        <a href="https://tools.fern.fun/">
+        <a href="https://tools.fern.fun/" target={"_blank"}>
           <div>
             <img src="/img/handyman.svg" alt="cpv" />
             <span>Tools</span>
+          </div>
+        </a>
+
+        <a href="/account">
+          <div>
+            <img src="/img/person.svg" alt="cpv" />
+            <span>Account</span>
           </div>
         </a>
       </div>
