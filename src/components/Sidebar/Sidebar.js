@@ -1,13 +1,22 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Sidebar({ loginURL }) {
+function Sidebar() {
   const [hamburger, setHamburger] = React.useState(false);
+  const [token, setToken] = React.useState();
   const navigate = useNavigate();
 
   const hamburgerHandler = () => {
     setHamburger(!hamburger);
   };
+
+  React.useEffect(() => {
+    if (localStorage.getItem("session") === null) {
+      setToken(false);
+    } else {
+      setToken(true);
+    }
+  }, []);
 
   return (
     <div className="sidebar">

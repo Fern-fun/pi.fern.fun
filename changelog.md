@@ -2,6 +2,20 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+## [5.4.0] - 28.12.2022
+
+### Major changes
+
+- Add tile component
+- Add uptime tile to home page
+- Add token system to sidebar
+
+### Changed features
+
+- Move tile style form `counterTile` to `tile`
+
+### Fixed bugs
+
 ## [5.3.0] - 18.12.2022
 
 ### Major changes

@@ -3,6 +3,7 @@ import CircleChartTile from "../../components/CircleChartTile/CircleChartTile";
 import GridPanel from "../../components/GridPanel/GridPanel";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import CounterTile from "../../components/CounterTile/CounterTile";
+import Tile from "../../components/Tile/Tile";
 
 const BarChartTile = React.lazy(() =>
   import("../../components/BarChartTile/BarChartTile")
@@ -27,6 +28,7 @@ const nFormater = (value) => {
 };
 
 function Home({ loginURL }) {
+  const [uptime, setUptime] = React.useState(0);
   const [cpu, setCpu] = React.useState(0);
   const [memory, setMemory] = React.useState(0);
   const [disk, setDisk] = React.useState(0);
@@ -34,6 +36,7 @@ function Home({ loginURL }) {
   const [todayQueries, setTodayQueries] = React.useState([0, ""]);
   const [totalQueries, setTotalQueries] = React.useState([0, ""]);
 
+  //! Request ever 2.5 seconds
   React.useEffect(() => {
     setInterval(() => {
       fetch("https://api.fern.fun/pi/hardware/cpu/")
@@ -54,6 +57,7 @@ function Home({ loginURL }) {
     }, 2500);
   }, []);
 
+  //! Request once
   React.useEffect(() => {
     fetch("https://api.fern.fun/query/get/today")
       .then((res) => res.json())
@@ -66,12 +70,19 @@ function Home({ loginURL }) {
       .then((data) => {
         setTotalQueries(nFormater(data));
       });
+
+    fetch("https://api.fern.fun/fern/dashboard/get/uptime")
+      .then((res) => res.json())
+      .then((data) => {
+        setUptime(data.uptime);
+      });
   }, []);
 
   return (
     <div className="page">
       <Sidebar loginURL={loginURL} />
       <GridPanel>
+        <Tile title={"Uptime"} value={uptime + "h"} />
         <CircleChartTile title={"CPU"} value={cpu} />
         <CircleChartTile title={"RAM"} value={memory} />
         <CircleChartTile title={"DISK"} value={disk} />

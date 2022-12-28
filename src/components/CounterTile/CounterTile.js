@@ -1,9 +1,7 @@
 import React from "react";
 import CountUp from "react-countup";
 
-function CounterTile(props) {
-  const { title, value, suffix } = props;
-
+function CounterTile({ title, value, suffix }) {
   return (
     <div className="tile">
       <div className="tile-title">

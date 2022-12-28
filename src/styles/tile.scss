@@ -29,5 +29,17 @@
     -moz-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  #online {
+    color: v.$secoundary-color;
+  }
+
+  #offline {
+    color: v.$error-color;
   }
 }
