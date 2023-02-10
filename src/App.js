@@ -19,6 +19,22 @@ import Account from "./page/Account/Account";
 function App() {
   const [token, setToken] = React.useState(localStorage.getItem("session"));
 
+  React.useEffect(() => {
+    fetch(
+      `https://api.fern.fun/fern/account/get/user/data/${localStorage.getItem(
+        "username"
+      )}/${localStorage.getItem("session")}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status !== "success") {
+          localStorage.removeItem("session");
+          localStorage.removeItem("username");
+          setToken(null);
+        }
+      });
+  }, []);
+
   // Not logged in
   if (!token) {
     return (

@@ -2,6 +2,16 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+## [5.4.1] - 10.02.2023
+
+### Major changes
+
+### Changed features
+
+### Fixed bugs
+
+- Fix session expiration
+
 ## [5.4.0] - 28.12.2022
 
 ### Major changes
