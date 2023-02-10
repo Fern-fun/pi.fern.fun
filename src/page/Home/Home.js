@@ -55,6 +55,11 @@ function Home({ loginURL }) {
         .then((data) => {
           setDisk(data.value);
         });
+      fetch("https://api.fern.fun/pi/hardware/cpu/temp/")
+        .then((res) => res.json())
+        .then((data) => {
+          setTemp(data.value);
+        });
     }, 2500);
   }, []);
 
@@ -76,12 +81,6 @@ function Home({ loginURL }) {
       .then((res) => res.json())
       .then((data) => {
         setUptime(data.uptime);
-      });
-
-    fetch("https://api.fern.fun/pi/hardware/cpu/temp/")
-      .then((res) => res.json())
-      .then((data) => {
-        setTemp(data.value);
       });
   }, []);
 
