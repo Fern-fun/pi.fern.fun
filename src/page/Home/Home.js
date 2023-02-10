@@ -32,6 +32,7 @@ function Home({ loginURL }) {
   const [cpu, setCpu] = React.useState(0);
   const [memory, setMemory] = React.useState(0);
   const [disk, setDisk] = React.useState(0);
+  const [temp, setTemp] = React.useState(0);
 
   const [todayQueries, setTodayQueries] = React.useState([0, ""]);
   const [totalQueries, setTotalQueries] = React.useState([0, ""]);
@@ -76,12 +77,34 @@ function Home({ loginURL }) {
       .then((data) => {
         setUptime(data.uptime);
       });
+
+    fetch("https://api.fern.fun/pi/hardware/cpu/temp/")
+      .then((res) => res.json())
+      .then((data) => {
+        setTemp(data.value);
+      });
   }, []);
 
   return (
     <div className="page">
       <Sidebar loginURL={loginURL} />
       <GridPanel>
+        <Tile
+          title={"CPU Temperature"}
+          value={
+            <>
+              <div>
+                <span>{parseInt(temp)}°C</span>
+              </div>
+              <div>
+                <span>{parseInt((parseFloat(temp) * 9) / 5 + 32)}°F</span>
+                <span>
+                  {Math.round((parseFloat(temp) + 273.15) * 100) / 100}K
+                </span>
+              </div>
+            </>
+          }
+        />
         <Tile title={"Uptime"} value={uptime + "h"} />
         <CircleChartTile title={"CPU"} value={cpu} />
         <CircleChartTile title={"RAM"} value={memory} />
@@ -91,13 +114,11 @@ function Home({ loginURL }) {
           value={totalQueries[0]}
           suffix={totalQueries[1]}
         />
-
         <CounterTile
           title={"Today API queries"}
           value={todayQueries[0]}
           suffix={todayQueries[1]}
         />
-
         <React.Suspense
           fallback={
             <div className="loading">

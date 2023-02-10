@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Major changes
 
+- New tile `CPU Temperature`
+
 ### Changed features
 
 ### Fixed bugs
