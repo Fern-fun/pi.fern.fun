@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Major changes
 
 - New tile `CPU Temperature`
+- New bar chart `CPU Temperature`, `CPU Usage`
 
 ### Changed features
 

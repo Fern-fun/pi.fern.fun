@@ -34,6 +34,10 @@ function Home({ loginURL }) {
   const [disk, setDisk] = React.useState(0);
   const [temp, setTemp] = React.useState(0);
 
+  const [barRam, setBarRam] = React.useState([]);
+  const [barCpuUsage, setCpuUsage] = React.useState([]);
+  const [barCpuTemp, setCpuTemp] = React.useState([]);
+
   const [todayQueries, setTodayQueries] = React.useState([0, ""]);
   const [totalQueries, setTotalQueries] = React.useState([0, ""]);
 
@@ -82,6 +86,24 @@ function Home({ loginURL }) {
       .then((data) => {
         setUptime(data.uptime);
       });
+
+    fetch("https://api.fern.fun/pi/hardware/ram/week/")
+      .then((res) => res.json())
+      .then((data) => {
+        setBarRam(data);
+      });
+
+    fetch("https://api.fern.fun/pi/hardware/cpu/week/")
+      .then((res) => res.json())
+      .then((data) => {
+        setCpuUsage(data);
+      });
+
+    fetch("https://api.fern.fun/pi/hardware/cpu/temp/week/")
+      .then((res) => res.json())
+      .then((data) => {
+        setCpuTemp(data);
+      });
   }, []);
 
   return (
@@ -125,7 +147,26 @@ function Home({ loginURL }) {
             </div>
           }
         >
-          <BarChartTile />
+          <BarChartTile
+            title={"Average Weekly RAM usage"}
+            data={barRam}
+            keys={Object.keys(barRam)}
+            suffix={"%"}
+          />
+
+          <BarChartTile
+            title={"Average Weekly CPU usage"}
+            data={barCpuUsage}
+            keys={Object.keys(barCpuUsage)}
+            suffix={"%"}
+          />
+
+          <BarChartTile
+            title={"Average Weekly CPU Temp"}
+            data={barCpuTemp}
+            keys={Object.keys(barCpuTemp)}
+            suffix={"°C"}
+          />
         </React.Suspense>
       </GridPanel>
     </div>

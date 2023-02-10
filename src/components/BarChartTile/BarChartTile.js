@@ -1,44 +1,31 @@
 import React from "react";
 
-function BarChartTile() {
-  const [barData, setBarData] = React.useState([]);
-  const [barKeys, setBarKeys] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch("https://api.fern.fun/pi/hardware/ram/week/")
-      .then((res) => res.json())
-      .then((data) => {
-        setBarData(data);
-        setBarKeys(Object.keys(data));
-      });
-  }, []);
-
+function BarChartTile({ data, keys, suffix, title }) {
   return (
     <div className="bar-chart">
       <div className="bar-chart-title">
-        {barKeys.length > 0 ? (
-          <span>Average Weekly RAM usage</span>
-        ) : (
-          <span>API Issue</span>
-        )}
+        {keys.length > 0 ? <span>{title}</span> : <span>API Issue</span>}
       </div>
       <div className="bar-chart-item">
-        {barKeys.map((key, index) => (
+        {keys.map((key, index) => (
           <div
             className="bar"
             key={key}
             style={{
-              height: `${Math.round(barData[key])}%`,
+              height: `${Math.round(data[key])}%`,
               backgroundColor:
-                barData[key] >= 45
-                  ? barData[key] >= 80
+                data[key] >= 45
+                  ? data[key] >= 80
                     ? "#fc4747"
                     : "#ec9641"
                   : "#62fb67",
             }}
           >
             <div className="bar-element">
-              <span>{Math.round(barData[key])}%</span>
+              <span>
+                {Math.round(data[key])}
+                {suffix}
+              </span>
             </div>
           </div>
         ))}
