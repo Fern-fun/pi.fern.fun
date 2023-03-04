@@ -1,0 +1,31 @@
+name: Deploy to development
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build, Test and Deploy
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Install
+        run: npm install
+      - name: Build Webapp
+        run:  npm run build
+      - name: List /build
+        run: ls ./build
+      - name: Deploy app
+        uses: milanmk/actions-file-deployer@master
+        with:
+          remote-protocol: "sftp"
+          remote-host:  ${{ secrets.SFTP_SERVER }}
+          remote-user: ${{ secrets.SFTP_USER }}
+          remote-port: 2137
+          ssh-private-key: ${{ secrets.SFTP_PRIVATE_KEY }} 
+          remote-path: "/fern/web/pi/"
+          sync: "full"
+          local-path: "build/"
