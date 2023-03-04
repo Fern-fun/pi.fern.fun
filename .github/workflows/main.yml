@@ -15,7 +15,7 @@ jobs:
       - name: Install
         run: npm install
       - name: Build Webapp
-        run:  npm run build
+        run:  CI= npm run build
       - name: List /build
         run: ls ./build
       - name: Deploy app
