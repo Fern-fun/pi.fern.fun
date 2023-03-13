@@ -1,10 +1,14 @@
 import React from "react";
 import Tile from "../Tile/Tile";
 
+import "./TileManager.scss";
+
 function TileManager() {
   const [cpuPercent, setCpuPercent] = React.useState(0);
   const [ramPercent, setRamPercent] = React.useState(0);
   const [diskPercent, setDiskPercent] = React.useState(0);
+  const [cpuTemp, setCpuTemp] = React.useState(0);
+
   const [uptime, setUptime] = React.useState(0);
   const [todayQueries, setTodayQueries] = React.useState(0);
 
@@ -21,6 +25,12 @@ function TileManager() {
         .then((response) => response.json())
         .then((data) => {
           setRamPercent(data.value);
+        });
+
+      fetch("https://api.fern.fun/pi/hardware/cpu/temp/")
+        .then((response) => response.json())
+        .then((data) => {
+          setCpuTemp(data.value);
         });
     }, 2500);
     return () => clearInterval(interval);
@@ -47,11 +57,12 @@ function TileManager() {
 
   return (
     <div className="container-tile">
+      <Tile type="temp" title="CPU Temp" value={`${cpuTemp}`} />
       <Tile type="text" title="CPU Usage" value={`${cpuPercent}%`} />
       <Tile type="text" title="RAM Usage" value={`${ramPercent}%`} />
       <Tile type="text" title="Disk Usage" value={`${diskPercent}%`} />
       <Tile type="text" title="Uptime" value={`${uptime}h`} />
-      <Tile type="text" title="Today's Queries" value={`${todayQueries}`} />
+      <Tile type="count" title="Today's Queries" value={`${todayQueries}`} />
     </div>
   );
 }
