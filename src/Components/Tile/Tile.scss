@@ -1,0 +1,24 @@
+.tile {
+  width: 200px;
+  height: 200px;
+
+  padding: 1rem;
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border: 2px solid red;
+
+  .tile__title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .tile__value {
+    font-size: 1rem;
+  }
+}
