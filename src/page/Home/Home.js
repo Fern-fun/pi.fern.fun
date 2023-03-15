@@ -81,10 +81,10 @@ function Home({ loginURL }) {
         setTotalQueries(nFormater(data));
       });
 
-    fetch("https://api.fern.fun/fern/dashboard/get/uptime")
+    fetch("https://api.fern.fun/pi/hardware/uptime/")
       .then((res) => res.json())
       .then((data) => {
-        setUptime(data.uptime);
+        setUptime(data.value);
       });
 
     fetch("https://api.fern.fun/pi/hardware/ram/week/")
