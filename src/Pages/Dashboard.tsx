@@ -1,11 +1,12 @@
-import React from "react";
-import TileManager from "../Components/TileManager/TileManager";
+import Sidebar from "../components/Sidebar/Sidebar";
+import { Tile } from "../components/Tile/Tile";
 
 function Dashboard() {
   return (
-    <div className="">
-      <div className="">
-        <TileManager />
+    <div className="page">
+      <Sidebar />
+      <div className="tile-container">
+        <Tile title="Dashboard" value="" />
       </div>
     </div>
   );

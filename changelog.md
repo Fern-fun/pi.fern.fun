@@ -1,6 +1,11 @@
 Changelog
-
 All notable changes to this project will be documented in this file.
+
+## [6.0.0] - 00.00.0000
+
+### Major changes
+
+- Migration to TypeScript
 
 ## [5.4.1] - 10.02.2023
 
