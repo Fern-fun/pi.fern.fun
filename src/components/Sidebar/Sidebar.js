@@ -21,7 +21,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="logo">
-        <img src="https://fern.fun/img/fern.fun.png" alt="logo" />
+        <img src="/logo.png" alt="logo" />
       </div>
       <button
         className={
