@@ -1,0 +1,69 @@
+@use "./var.scss" as *;
+
+// Define common variables
+$animation-duration: 1s;
+$ease-in-out: ease-in-out;
+
+// Fade in animation
+@mixin fadeIn($axis, $distance) {
+  animation: fadeIn#{$axis} #{$animation-duration} #{$ease-in-out};
+
+  @keyframes fadeIn#{$axis} {
+    0% {
+      opacity: 0;
+      transform: translate#{$axis }($distance);
+    }
+    100% {
+      opacity: 1;
+      transform: translate#{$axis }(0);
+    }
+  }
+}
+
+// Fade in from left
+.fadeInFromLeft {
+  @include fadeIn(X, -50px);
+}
+
+// Fade in from bottom
+.fadeInFromBottom {
+  @include fadeIn(Y, 50px);
+}
+
+// Smooth show
+.smoothShow {
+  animation: smoothShow #{$animation-duration} #{$ease-in-out};
+
+  @keyframes smoothShow {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+// Breathing animation
+.breathing {
+  animation: breathing 4s #{$ease-in-out} infinite;
+
+  @keyframes breathing {
+    0%,
+    100% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+// Hover scale
+.hoverScale {
+  transition: transform 0.2s #{$ease-in-out};
+}
+
+.hoverScale:hover {
+  transform: scale(1.05);
+}

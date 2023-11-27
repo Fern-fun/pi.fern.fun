@@ -1,0 +1,60 @@
+@use "./var.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import "./anim.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-fira-code;
+}
+
+body {
+  background: $background-dark;
+  background: $background-gradient;
+  background-attachment: fixed;
+
+  color: $body-color;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $scrollbar-track-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb-color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $scrollbar-thumb-color;
+}
+
+#root {
+  position: relative;
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    z-index: 100;
+
+    a {
+      color: $fern-color;
+      text-decoration: none;
+    }
+  }
+}

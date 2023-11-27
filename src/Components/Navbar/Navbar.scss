@@ -1,60 +1,64 @@
-@use "../../styles/var.scss" as *;
-@import url("./hamburgers.scss");
+//Import variables
+@use "../../var.scss" as *;
 
-.sidebar {
-  background: $sidebar-bg-color;
-  @media screen and (min-width: $mobile-width + 1px) {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+// Import Hamburgers
+@import url("./Hamburgers.scss");
 
-    .hamburger {
+// Navbar Container
+.navbar-container {
+  width: 100%;
+  z-index: 10000;
+
+  @media screen and (min-width: $mobile-width) {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    height: 80px;
+
+    &__hamburger {
       display: none;
     }
 
-    .logo {
-      width: fit-content;
+    &__logo {
+      width: auto;
+      margin: auto;
+      padding: 5px;
+
       img {
-        max-width: 200px;
+        max-width: 48px;
+        max-height: 105px;
+        padding: 0.5rem;
       }
     }
 
-    .hamburger {
-      visibility: hidden;
-    }
-
-    .nav {
+    &__box {
       display: grid;
-      justify-content: center;
-      align-items: center;
-
-      grid-template-columns: 200px;
-      grid-template-rows: repeat(3, 50px);
-      gap: 20px;
-      text-align: left;
+      justify-content: flex-end;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+      grid-column-start: revert;
       font-size: 1.1rem;
+      gap: 1rem;
 
       a {
-        color: white;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+
+        color: $navbar-color;
         text-decoration: none;
+
         div {
           position: relative;
           display: inline-flex;
+          justify-content: center;
           align-items: center;
+          text-align: center;
 
           padding: 15px;
           width: 100%;
 
           img {
             width: 32px;
-          }
-
-          span {
-            margin-left: 25px;
-            line-height: 22px;
           }
 
           &::after {
@@ -65,7 +69,7 @@
             top: 100%;
             left: 0;
 
-            background: $sidebar-line-hover-color;
+            background: $navbar-hover-color;
             transition: transform 0.5s;
             border-radius: 5px;
             transform: scaleX(0);
@@ -73,7 +77,7 @@
           }
 
           &:hover {
-            color: $sidebar-a-hover-color;
+            color: $navbar-hover-color;
             cursor: pointer;
           }
 
@@ -90,20 +94,30 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    .logo {
-      width: auto;
-      margin: auto;
+    &__logo {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 1rem;
 
       img {
-        max-width: 200px;
+        max-width: 48px;
+        padding: 0.5rem;
       }
     }
 
-    .nav {
+    &__hamburger {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__box {
       display: none;
       font-size: 1.1rem;
+
       a {
-        color: white;
+        color: $navbar-color;
         text-decoration: none;
 
         div {

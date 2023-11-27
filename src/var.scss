@@ -1,0 +1,40 @@
+//! INDEX
+// Fonts
+$font-fira-code: "Fira Code", monospace;
+
+// Colors
+$background-dark: rgb(41, 41, 41);
+$background-gradient: linear-gradient(
+  0deg,
+  rgba(41, 41, 41, 1) 0%,
+  rgba(36, 36, 37, 1) 19%,
+  rgba(30, 30, 33, 1) 39%
+);
+$body-color: #fff; // Replace with the actual body text color
+$body-bg-color: rgb(
+  41,
+  41,
+  41
+); // Replace with the actual body background color
+$scrollbar-track-color: #c39afc;
+$scrollbar-thumb-color: #c39afc;
+
+//! HOME Page
+$mobile-width: 800px; // Set your actual mobile width
+$fern-color: #c39afc; // Replace with your actual fern color
+$fern-color-second: #c99ede; // Replace with your actual secondary fern color
+
+//! Navbar
+$mobile-width: 800px; // Set your actual mobile width
+$navbar-color: #fff; // Replace with your actual navbar color
+$navbar-hover-color: #c39afc; // Replace with your actual navbar hover color
+
+//! GamesShowCase
+$game-card-color: #fff; // Replace with your actual card color
+$game-card-border-radius: 8px; // Replace with your actual border radius
+$game-card-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); // Replace with your actual box shadow
+$game-card-background-color: #323232; // Replace with your actual background color
+$game-card--links--bnt--bg--color: #00ff7f; // Replace with your actual fern color
+
+//! DataTile
+$data-tile-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); // Replace with your actual box shadow

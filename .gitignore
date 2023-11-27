@@ -1,3 +1,6 @@
+#Other
+package-lock.json
+
 # Logs
 logs
 *.log
@@ -6,11 +9,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+dist
 node_modules
 dist
 dist-ssr
 *.local
+
+build.bat
 
 # Editor directories and files
 .vscode/*

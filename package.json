@@ -1,25 +1,26 @@
 {
   "name": "pi.fern.fun",
   "private": false,
-  "version": "6.0.0",
+  "version": "7.0.0",
+  "homepag": "/",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build && build.bat",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.9.0",
-    "sass": "^1.59.3"
+    "sass": "^1.59.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
-    "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }
 }
