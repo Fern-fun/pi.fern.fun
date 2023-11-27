@@ -141,45 +141,6 @@
   }
 }
 
-.panel-main {
-  box-shadow: 0 0px 5px rgba($fern-color, 0.4);
-
-  height: 300px;
-  width: 300px;
-
-  border-radius: 6px;
-
-  .panel-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 1rem;
-    padding: 0.5rem;
-    text-align: center;
-  }
-
-  .panel-content {
-    font-size: 0.8rem;
-    width: auto;
-    margin: 1rem;
-    padding: 0.5rem;
-    text-align: justify;
-
-    .sub-panel {
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      justify-content: space-between;
-      align-content: center;
-
-      span {
-        margin: 1rem;
-        text-align: left;
-      }
-    }
-  }
-}
-
 // Fern Text
 .fern-text {
   background: -webkit-linear-gradient($fern-color, $fern-color-second);
