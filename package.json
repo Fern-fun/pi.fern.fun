@@ -6,11 +6,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && build.bat",
+    "build": "vite build && deploy.bat",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-loader-spinner": "^5.4.5",

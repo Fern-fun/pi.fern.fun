@@ -1,5 +1,6 @@
 #Other
 package-lock.json
+deploy.bat
 
 # Logs
 logs
