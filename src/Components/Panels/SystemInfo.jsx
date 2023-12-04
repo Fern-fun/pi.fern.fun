@@ -5,7 +5,7 @@ import "./Panels.scss";
 
 const SystemInfo = () => {
   const [systemInfo, setSystemInfo] = useState({});
-  const [tempValue, setTempValue] = useState({});
+  const [tempValue, setTempValue] = useState(0);
 
   useEffect(() => {
     fetch(`${config.api_url}/dashboard/get/system/info`)
@@ -57,13 +57,23 @@ const SystemInfo = () => {
         <div className="title">CPU Temp</div>
         <div className="content--cpu-temp">
           <div style={{ gridArea: "1 / 1 / 2 / 3" }}>
-            <span>{Math.round(tempValue)}°C</span>
+            <span>
+              {tempValue != 0 ? `${Math.round(tempValue)}°C` : "Loading..."}
+            </span>
           </div>
           <div style={{ gridArea: "2 / 1 / 3 / 2" }}>
-            <span>{Math.round(tempValue + 273.15)}K</span>
+            <span>
+              {tempValue != 0
+                ? `${Math.round(tempValue + 273.15)}K`
+                : "Loading..."}
+            </span>
           </div>
           <div style={{ gridArea: "2 / 2 / 3 / 3" }}>
-            <span>{Math.round((tempValue * 9) / 5 + 32, 2)}°F</span>
+            <span>
+              {tempValue != 0
+                ? `${Math.round((tempValue * 9) / 5 + 32, 2)}°F`
+                : "Loading..."}
+            </span>
           </div>
         </div>
       </div>
